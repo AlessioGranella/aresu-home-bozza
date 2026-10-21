@@ -22,9 +22,9 @@ jobs:
       - name: Prepara il sito
         run: |
           mkdir _site
-          cp -r index.html img video font _site/
+          cp -r index.html azienda.html territorio.html formaggi.html img video font _site/
           # Loew non è nel repo: tolgo le sue @font-face, i titoli ricadono su Montserrat.
-          sed -i '/Loew-/d' _site/index.html
+          sed -i '/Loew-/d' _site/*.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

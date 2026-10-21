@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Formaggi Aresu — Donori, Sardegna, dal 1938</title>
-<meta name="description" content="Formaggi tradizionali sardi dal 1938. Pecorini, caprini, formaggi misti, ricotte e specialità del caseificio Aresu di Donori.">
+<meta name="description" content="La Formaggi Aresu produce formaggi tradizionali sardi dal 1938. Pecorini, caprini, ricotte e specialità casearie sarde.">
 <link rel="icon" href="img/sigillo-pieno-arancio.svg">
 <style>
 /* Bozza home — Formaggi Aresu. Token dal design system (../../design-system), prefisso --ar-*.
@@ -115,7 +115,7 @@ p { margin: 0; }
 .territorio__corpo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
 .territorio__corpo h2 { font-size: clamp(34px, 4.2vw, 60px); line-height: 1.06; margin-top: 18px; letter-spacing: -.02em; }
 .territorio__corpo p + p { margin-top: 18px; }
-.numeri { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: clamp(64px, 8vw, 112px); }
+.numeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: clamp(64px, 8vw, 112px); }
 .numeri div { padding-top: 24px; border-top: 1px solid var(--linea); }
 .numeri b { display: block; font: 300 clamp(40px, 4.6vw, 68px)/1 var(--titoli); color: var(--ar-marrone); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 .numeri span { display: block; margin-top: 12px; font-size: 14px; color: var(--fg-muted); }
@@ -196,6 +196,7 @@ p { margin: 0; }
 .categoria__visivo.mostra-prodotto .categoria__prodotto { opacity: 1; }
 .categoria__info h3 { font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; margin-bottom: 20px; }
 .categoria__info > p { max-width: 50ch; }
+.categoria__info > .link { margin-top: 28px; }
 .elenco { list-style: none; margin: 40px 0 36px; padding: 0; border-top: 1px solid var(--linea); }
 .elenco li { display: grid; grid-template-columns: 1fr auto; gap: 4px 24px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--linea);
   transition: padding .35s var(--ease); }
@@ -210,8 +211,8 @@ p { margin: 0; }
 .gesti { background: var(--ar-panna); }
 .gesti__fermo { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 96px);
   align-items: center; padding-block: clamp(96px, 12vh, 140px) clamp(40px, 8vh, 80px); }
-.gesti__testa h2 { font-size: clamp(38px, 4.8vw, 72px); line-height: 1; margin-top: 18px; letter-spacing: -.025em; }
-.gesti__passi { position: relative; margin-top: clamp(36px, 6vh, 64px); min-height: 190px; }
+.gesti__testa h2 { font-size: clamp(32px, 3.6vw, 56px); line-height: 1; margin-top: 18px; letter-spacing: -.025em; }
+.gesti__passi { position: relative; margin-top: clamp(36px, 6vh, 64px); min-height: 300px; }
 .passo { border-top: 1px solid var(--linea); padding-top: 24px; }
 .passo + .passo { margin-top: 28px; }
 .passo .num { font: 300 13px/1 var(--titoli); letter-spacing: .2em; color: var(--ar-arancio); }
@@ -223,8 +224,10 @@ p { margin: 0; }
 .gesti__immagini .foto { position: absolute; inset: 0; }
 .gesti__immagini .bn img { filter: grayscale(1); }
 /* Con l'animazione attiva i passi si sovrappongono e si alternano. */
-.anima .gesti__passi .passo { position: absolute; inset: 0 0 auto; margin: 0; }
-.anima .gesti__avanzamento { display: block; }
+@media (min-width: 761px) {
+  .anima .gesti__passi .passo { position: absolute; inset: 0 0 auto; margin: 0; }
+  .anima .gesti__avanzamento { display: block; }
+}
 .gesti__citazione { text-align: center; padding: clamp(80px, 10vw, 144px) var(--g) var(--s); }
 .gesti__citazione blockquote { margin: 0 auto; max-width: 24ch; font: 400 clamp(24px, 2.8vw, 40px)/1.35 var(--testo); text-transform: uppercase; letter-spacing: .06em; color: var(--ar-arancio); }
 .gesti__citazione cite { display: block; margin-top: 24px; font: 700 11px/1 var(--titoli); font-style: normal; letter-spacing: .24em; text-transform: uppercase; color: var(--fg-muted); }
@@ -334,7 +337,7 @@ p { margin: 0; }
   .hero h1 { font-size: 46px; }
   .hero__scorri { display: none; }
   .territorio__corpo, .persone__corpo, .dove__griglia { grid-template-columns: 1fr; gap: 24px; }
-  .numeri { grid-template-columns: 1fr 1fr; row-gap: 8px; }
+  .numeri { grid-template-columns: 1fr; row-gap: 8px; }
 
   .cinema { aspect-ratio: 4 / 3; }
   .cinema img { object-position: 40% 50%; }
@@ -348,14 +351,19 @@ p { margin: 0; }
   .elenco li:hover { padding-left: 0; }
   .elenco__miniatura { display: block; grid-row: 1 / span 2; width: 64px; height: 64px; background: var(--ar-sabbia); }
   .elenco__miniatura img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; }
-  .elenco b, .elenco span { grid-column: 2; } .elenco em { grid-column: 3; }
+  .elenco__miniatura .sigillo { width: 60%; height: auto; margin: 20%; opacity: .35; mix-blend-mode: normal; }
+  .elenco .elenco__miniatura { grid-column: 1; grid-row: 1 / span 2; align-self: center; }  /* è uno span: deve battere .elenco span */
+  .elenco b { grid-column: 2; grid-row: 1; align-self: end; } .elenco span { grid-column: 2; grid-row: 2; align-self: start; }
+  .elenco em { grid-column: 3; }
   .elenco b { font-size: 14px; } .elenco span { font-size: 11px; }
 
   /* Su mobile la sezione bloccata mette l'immagine sopra e il passo sotto. */
   .gesti__fermo { grid-template-columns: 1fr; gap: 24px; align-content: start; padding-top: 96px; }
   .gesti__immagini { order: -1; aspect-ratio: auto; height: 46vh; max-height: none; margin-inline: calc(var(--g) * -1); width: auto; justify-self: stretch; }
   .gesti__testa h2 { font-size: 32px; margin-top: 12px; }
-  .gesti__passi { margin-top: 20px; min-height: 150px; }
+  .gesti__passi { margin-top: 20px; min-height: 0; }
+  .gesti__immagini .foto + .foto { display: none; }
+  .gesti__fermo { min-height: 0; padding-bottom: 0; }
   .passo h3 { margin-top: 8px; }
 
   .evidenze { grid-template-columns: 1fr; gap: 56px; }
@@ -363,6 +371,16 @@ p { margin: 0; }
   .luoghi { grid-template-columns: 1fr; }
   .dove .foto { margin-inline: calc(var(--g) * -1); }
   .piede__griglia { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* Telefono: etichette e link piccoli non sotto i 12px, aree di tocco più comode. */
+@media (max-width: 760px) {
+  .occhiello, .link, .hero__scheda b, .piede h4, .valori h3, .elenco span, .scopri, .prodotto__dati dt, .gesti__citazione cite, .citazione cite, .racconto cite { font-size: 12px; }
+  .link { padding-block: 10px 8px; }
+  .piede ul { gap: 4px; } .piede ul a { display: inline-block; padding: 6px 0; }
+  .lingue-m a { padding: 8px 0 !important; }
+  .evidenza__meta { grid-template-columns: 1fr; }
+  .evidenza__meta span { margin-top: 4px; }
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
@@ -374,10 +392,9 @@ p { margin: 0; }
   <div class="wrap">
     <button class="apri-menu" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu-mobile"><span></span><span></span></button>
     <nav aria-label="Principale">
-      <a href="#storia">Storia</a>
-      <a href="#formaggi">Formaggi</a>
-      <a href="#territorio">Territorio</a>
-      <a href="#gesti">Caseificio</a>
+      <a href="azienda.html">Azienda</a>
+      <a href="formaggi.html">Formaggi</a>
+      <a href="territorio.html">Territorio</a>
     </nav>
     <a class="marchio" href="#top" aria-label="Formaggi Aresu, torna all'inizio"><img class="scuro" src="img/sigillo-linea-marrone.svg" alt="Formaggi Aresu 1938" width="116" height="116"><img class="chiaro" src="img/sigillo-linea-panna.svg" alt="" width="116" height="116"></a>
     <div class="destra">
@@ -387,25 +404,25 @@ p { margin: 0; }
   </div>
 </header>
 <div class="menu-mobile" id="menu-mobile">
-  <a href="#storia">Storia</a><a href="#formaggi">Formaggi</a><a href="#territorio">Territorio</a><a href="#gesti">Caseificio</a><a href="#dove">Contatti</a>
+  <a href="azienda.html">Azienda</a><a href="formaggi.html">Formaggi</a><a href="territorio.html">Territorio</a><a href="#dove">Contatti</a>
   <div class="lingue-m"><a href="#" aria-current="true">IT</a><a href="#">EN</a><a href="#">DE</a></div>
 </div>
 
 <main id="top">
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero__media" id="hero-media"><video src="video/hero.mp4" poster="video/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Donori: i pascoli, il latte, la cagliata, le forme in cantina"></video></div>
+    <div class="hero__media" id="hero-media"><video poster="video/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Video del caseificio Formaggi Aresu"><source src="video/hero.mp4" type="video/mp4" media="(min-width: 761px)"><source src="video/hero-mobile.mp4" type="video/mp4"></video></div>
     <div class="hero__contenuto">
       <div class="wrap">
         <div class="hero__testo">
           <div class="occhiello" data-entra>Donori · Sardegna · dal 1938</div>
-          <h1 data-righe><span class="riga"><span>Il latte di queste</span></span><span class="riga"><span><em>colline</em></span></span></h1>
-          <p data-entra>Formaggi tradizionali sardi, fatti dalla famiglia Aresu con gli stessi gesti da tre generazioni.</p>
+          <h1 data-righe><span class="riga"><span>È buono,</span></span><span class="riga"><span>è sardo,</span></span><span class="riga"><span><em>è Aresu.</em></span></span></h1>
+          <p data-entra>La Formaggi Aresu produce formaggi tradizionali sardi dal 1938.</p>
           <a class="link" href="#formaggi" data-entra>Scopri i formaggi <span aria-hidden="true">→</span></a>
         </div>
         <div class="hero__schede" data-entra>
-          <a class="hero__scheda" href="#formaggi"><img src="img/cat-pecorino.jpg" alt=""><span><b>I formaggi</b><span>Cinque famiglie</span></span></a>
-          <a class="hero__scheda" href="#storia"><img src="img/storia-1917.jpg" alt="" style="filter:grayscale(1)"><span><b>La storia</b><span>Dal 1938 a Donori</span></span></a>
+          <a class="hero__scheda" href="formaggi.html"><img src="img/cat-pecorino.jpg" alt=""><span><b>I nostri formaggi</b><span>Una vasta gamma di prodotti</span></span></a>
+          <a class="hero__scheda" href="azienda.html"><img src="img/storia-1917.jpg" alt="" style="filter:grayscale(1)"><span><b>La storia</b><span>Il valore della storia</span></span></a>
         </div>
       </div>
     </div>
@@ -416,17 +433,16 @@ p { margin: 0; }
   <section class="territorio" id="territorio">
     <div class="wrap">
       <div class="territorio__corpo">
-        <div><div class="occhiello" data-entra>Il territorio</div><h2 data-righe><span class="riga"><span>Nel sud della Sardegna,</span></span><span class="riga"><span>lontani dalle città.</span></span></h2></div>
+        <div><div class="occhiello" data-entra>Il territorio</div><h2 data-righe><span class="riga"><span>Il formaggio Sardo.</span></span></h2></div>
         <div data-entra>
           <p>Lavoriamo lontani dal mare e dalle città, immersi nella natura più incontaminata del sud Sardegna. L'aria è pulita, i pascoli sono in salute.</p>
-          <p>È un latte che cambia con le stagioni: in primavera è floreale, d'estate si fa più concentrato, e il formaggio lo racconta.</p>
+          <p>Per fortuna dalle nostre parti, nel sud Sardegna, l'isolamento, la lontananza dal mare e dalla città ha tutelato ed arricchito un prodotto veramente unico.</p>
         </div>
       </div>
       <div class="numeri">
-        <div data-entra><b data-conta="1938" data-da="1900">1938</b><span>la prima forma</span></div>
-        <div data-entra><b data-conta="100" data-suffisso="%">100%</b><span>latte sardo</span></div>
-        <div data-entra><b data-conta="500000">500.000</b><span>forme vendute ogni anno</span></div>
-        <div data-entra><b data-conta="12">12</b><span>Paesi in cui arrivano</span></div>
+        <div data-entra><b data-conta="1938" data-da="1900">1938</b><span>formaggi tradizionali sardi dal 1938</span></div>
+        <div data-entra><b data-conta="500" data-suffisso="k">500k</b><span>pezzi commercializzati ogni anno</span></div>
+        <div data-entra><b data-conta="12">12</b><span>nazioni</span></div>
       </div>
     </div>
   </section>
@@ -434,24 +450,24 @@ p { margin: 0; }
   <!-- STORIA: IL RACCONTO -->
   <section class="storia" id="storia">
     <figure class="cinema" style="margin:0">
-      <img src="img/casaro.jpg" alt="Il casaro di casa Aresu racconta, seduto al tavolo con un bicchiere di vino e una forma" loading="lazy" id="cinema-img">
+      <img src="img/casaro.jpg" alt="Un uomo seduto a un tavolo con un bicchiere di vino e alcune forme di formaggio" loading="lazy" id="cinema-img">
       <figcaption>Dal film di Formaggi Aresu</figcaption>
     </figure>
     <div class="wrap racconto">
       <div>
         <div class="occhiello" data-entra>Il racconto</div>
         <blockquote id="parole" style="margin-top:22px">«Ero un bambino. Forse ero con mia madre, Assuntina. Non ricordo che qualcuno mi abbia insegnato a fare il formaggio. Ricordo bene, però, che lo sapevo fare.»</blockquote>
-        <cite data-entra>Il casaro di casa Aresu</cite>
+        <cite data-entra>Dal film di Formaggi Aresu</cite>
       </div>
       <div class="racconto__lato">
-        <div class="occhiello" data-entra>La famiglia</div>
-        <h2 data-righe><span class="riga"><span>Dal 1938 lo stesso mestiere,</span></span><span class="riga"><span>imparato guardando.</span></span></h2>
-        <p data-entra>Il nonno faceva il formaggio per il paese. Oggi le forme partono da Donori per l'Italia e per l'Europa, ma la cagliata si rompe ancora a mano e la salamoia si controlla col dito.</p>
-        <a class="link" href="#" data-entra>Leggi la storia <span aria-hidden="true">→</span></a>
+        <div class="occhiello" data-entra>La famiglia Aresu</div>
+        <h2 data-righe><span class="riga"><span>La storia insegna,</span></span><span class="riga"><span>nel passato c’è il futuro.</span></span></h2>
+        <p data-entra>La famiglia Aresu affonda le sue radici nei ricordi e nel lavoro passato, dal quale tutt’oggi attinge per migliorarsi ed innovarsi.</p>
+        <a class="link" href="azienda.html" data-entra>Leggi la storia <span aria-hidden="true">→</span></a>
         <div class="fotogrammi">
-          <figure data-entra><div class="foto" data-rivela><img src="img/tre-generazioni.jpg" alt="Tre generazioni della famiglia Aresu al tavolo con le forme" loading="lazy"></div><figcaption>Tre generazioni allo stesso tavolo</figcaption></figure>
-          <figure data-entra><div class="foto" data-rivela><img src="img/nonno-nipote.jpg" alt="Nonno e nipote tra le forme in cantina" loading="lazy" style="object-position:55% 50%"></div><figcaption>Tra le forme, in cantina</figcaption></figure>
-          <figure data-entra><div class="foto bn" data-rivela><img src="img/storia-1917.jpg" alt="Foto d'archivio: la mungitura delle pecore a Donori" loading="lazy"></div><figcaption>Donori, archivio di famiglia</figcaption></figure>
+          <figure data-entra><div class="foto" data-rivela><img src="img/tre-generazioni.jpg" alt="Tre uomini attorno a un tavolo con forme di formaggio" loading="lazy"></div></figure>
+          <figure data-entra><div class="foto" data-rivela><img src="img/nonno-nipote.jpg" alt="Due uomini controllano una forma tra le scaffalature di stagionatura" loading="lazy" style="object-position:55% 50%"></div></figure>
+          <figure data-entra><div class="foto bn" data-rivela><img src="img/storia-1917.jpg" alt="Foto storica, Donori 1917" loading="lazy"></div><figcaption>Donori 1917</figcaption></figure>
         </div>
       </div>
     </div>
@@ -474,8 +490,8 @@ p { margin: 0; }
     </div>
     <div class="vetrina__testo">
       <div class="occhiello" data-entra>Il catalogo</div>
-      <h2 id="vetrina-titolo" data-righe><span class="riga"><span>Cinque famiglie,</span></span><span class="riga"><span><em>una sola cantina</em></span></span></h2>
-      <p data-entra>Pecorini, caprini, formaggi misti, ricotte e specialità. Dal primo sale alla lunga stagionatura, sempre e solo latte sardo.</p>
+      <h2 id="vetrina-titolo" data-righe><span class="riga"><span>Una vasta gamma</span></span><span class="riga"><span><em>di prodotti.</em></span></span></h2>
+      <p data-entra>Vengono prodotte circa 40 diverse referenze, dai pecorini DOP, ai formaggi caprini; ricotte fresche e stagionate, e tante altre specialità casearie sarde.</p>
       <a class="link" href="#formaggi" data-entra>Scegli il tuo formaggio <span aria-hidden="true">↓</span></a>
     </div>
   </section>
@@ -484,8 +500,7 @@ p { margin: 0; }
   <section class="sezione" id="formaggi">
     <div class="wrap">
       <div class="formaggi__testa">
-        <div><div class="occhiello" data-entra>Le famiglie</div><h2 data-righe><span class="riga"><span>I nostri formaggi</span></span></h2></div>
-        <p data-entra>Scegli una famiglia: per ogni formaggio, tipologia e stagionatura.</p>
+        <div><div class="occhiello" data-entra>Prodotti tradizionali sardi</div><h2 data-righe><span class="riga"><span>I nostri formaggi</span></span></h2></div>
       </div>
 
       <div class="schede" role="tablist" aria-label="Categorie di formaggi">
@@ -501,19 +516,19 @@ p { margin: 0; }
           <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
         <div class="categoria__info">
           <h3>Pecorino</h3>
-          <p>Dai freschissimi agli stagionati. I nostri classici stagionati non subiscono trattamenti con conservanti in crosta: la stagionatura a crosta naturale, fatta come da tradizione, alla vecchia maniera, è la nostra grande peculiarità.</p>
+          <p>Dai freschissimi agli stagionati, il nostro assortimento di pecorini copre tutte le esigenze commerciali, garantendo alto valore aggiunto in ogni fascia. I nostri classici stagionati non subiscono trattamenti con conservanti in crosta. La stagionatura a crosta naturale, fatta come da tradizione, alla vecchia maniera, è una nostra grande peculiarità.</p>
+          <a class="link" href="formaggi.html#pecorino">Tutti i pecorini <span aria-hidden="true">→</span></a>
           <ul class="elenco">
-            <li><b>Pecorino primo sale</b><span>Pecorino dolce</span><em>Fresco</em></li>
-            <li><b>Ricercata<sup>®</sup></b><span>Pecorino dolce</span><em>Fresco</em></li>
-            <li data-foto="p-originale"><b>Originale<sup>®</sup></b><span>Pecorino fresco</span><em>30–40 giorni</em></li>
+            <li><b>Pecorino primo sale</b><span>Pecorino tradizionale italiano</span><em>Senza stagionatura</em></li>
+            <li data-foto="p-ricercata"><b>Ricercata<sup>®</sup></b><span>Pecorino dolce</span><em>20–30 giorni</em></li>
+            <li data-foto="p-originale"><b>Originale<sup>®</sup></b><span>Pecorino fresco</span><em>20–30 giorni</em></li>
             <li data-foto="p-risveglio"><b>Risveglio<sup>®</sup></b><span>Pecorino semistagionato</span><em>3 mesi</em></li>
             <li data-foto="p-la-goccia"><b>La Goccia<sup>®</sup></b><span>Pecorino stagionato</span><em>7 mesi</em></li>
-            <li><b>Nobile<sup>®</sup></b><span>Pecorino stagionato superiore</span><em>7 mesi</em></li>
-            <li><b>Arrocca<sup>®</sup></b><span>Pecorino stravecchio riserva</span><em>Riserva</em></li>
-            <li><b>Brunu<sup>®</sup></b><span>Pecorino</span><em>Stagionato</em></li>
-            <li><b>Pecorino Romano DOP</b><span>Il pecorino italiano più venduto nel mondo</span><em>DOP</em></li>
+            <li data-foto="p-nobile"><b>Nobile<sup>®</sup></b><span>Pecorino stagionato superiore</span><em>7 mesi</em></li>
+            <li data-foto="p-arrocca"><b>Arrocca<sup>®</sup></b><span>Pecorino stravecchio riserva</span><em>Fino a 3 anni</em></li>
+            <li><b>Brunu</b><span>Pecorino</span><em>30–40 giorni</em></li>
+            <li data-foto="p-romano-dop"><b>Pecorino Romano DOP</b><span>Il pecorino italiano più venduto nel mondo</span><em>DOP</em></li>
           </ul>
-          <a class="link" href="#">Tutti i pecorini <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
@@ -522,14 +537,14 @@ p { margin: 0; }
           <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
         <div class="categoria__info">
           <h3>Caprino</h3>
-          <p>Un prodotto in cui crediamo da più di 50 anni, ancor prima che le caratteristiche nutrizionali dei formaggi caprini fossero conosciute e valorizzate. Conosciamo le montagne da cui viene il latte.</p>
+          <p>Un prodotto in cui crediamo da più di 50 anni, ancor prima che le caratteristiche nutrizionali dei formaggi caprini fossero conosciute e valorizzate. Conosciamo le montagne da cui proviene la materia prima, ne valorizziamo le caratteristiche nutrizionali, creando un formaggio di qualità superiore.</p>
+          <a class="link" href="formaggi.html#caprino">Tutti i caprini <span aria-hidden="true">→</span></a>
           <ul class="elenco">
-            <li data-foto="p-ideale"><b>Ideale<sup>®</sup></b><span>Caprino fresco</span><em>30–40 giorni</em></li>
+            <li data-foto="p-ideale"><b>Ideale<sup>®</sup></b><span>Caprino fresco</span><em>30 giorni</em></li>
             <li data-foto="p-aresti"><b>Aresti<sup>®</sup></b><span>Caprino semistagionato</span><em>3 mesi</em></li>
             <li data-foto="p-selvaggio"><b>Selvaggio<sup>®</sup></b><span>Caprino stagionato</span><em>7 mesi</em></li>
-            <li><b>Grancapresu<sup>®</sup></b><span>Caprino stagionato superiore</span><em>Superiore</em></li>
+            <li><b>Grancapresu<sup>®</sup></b><span>Caprino stagionato superiore</span><em>12 mesi</em></li>
           </ul>
-          <a class="link" href="#">Tutti i caprini <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
@@ -538,14 +553,14 @@ p { margin: 0; }
           <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
         <div class="categoria__info">
           <h3>Formaggi misti</h3>
-          <p>Le note dolci del latte di mucca locale si uniscono al sapore del latte di pecora. Le forme stagionano su assi di legno massello, che lasciano una firma su ognuna. Il Granaresu è il nostro top di gamma.</p>
+          <p>Le note dolci del latte fresco di mucca locale si uniscono al sapore del latte di pecora. I prodotti stagionano su assi di legno massello, che imprimono una firma indelebile su ogni forma. In questa categoria, spicca il Granaresu, top di gamma, ormai un riferimento nel mercato nazionale ed internazionale.</p>
+          <a class="link" href="formaggi.html#misti">Tutti i formaggi misti <span aria-hidden="true">→</span></a>
           <ul class="elenco">
-            <li data-foto="p-trifoglio"><b>Trifoglio<sup>®</sup></b><span>Formaggio misto fresco</span><em>30–40 giorni</em></li>
-            <li><b>Formaggio primo sale</b><span>Primo sale misto</span><em>Fresco</em></li>
+            <li data-foto="p-trifoglio"><b>Trifoglio<sup>®</sup></b><span>Formaggio misto fresco</span><em>20–30 giorni</em></li>
+            <li><b>Formaggio primo sale</b><span>Primo sale misto</span><em>Senza stagionatura</em></li>
             <li data-foto="p-montesu"><b>Montesu<sup>®</sup></b><span>Formaggio misto da tavola</span><em>3 mesi</em></li>
-            <li data-foto="p-granaresu"><b>Granaresu<sup>®</sup></b><span>Misto superiore a lunga maturazione</span><em>12 mesi</em></li>
+            <li data-foto="p-granaresu"><b>Granaresu<sup>®</sup></b><span>Formaggio misto superiore a lunga maturazione</span><em>12 mesi</em></li>
           </ul>
-          <a class="link" href="#">Tutti i formaggi misti <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
@@ -554,13 +569,13 @@ p { margin: 0; }
           <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
         <div class="categoria__info">
           <h3>Ricotta</h3>
-          <p>La ricotta fatta alla vecchia maniera: fuoco e sale marino di Sardegna. Nessun additivo, né panna o grassi, solo sapienza e mani esperte. Dalle fresche alle stagionate.</p>
+          <p>La ricotta fatta alla vecchia maniera: fuoco e sale marino di Sardegna. Nessun additivo, né panna o grassi, solo sapienza e mani esperte. Garantiamo a tutta l’ampia gamma, dalle fresche alle stagionate, un valore ed un gusto inconfondibile e tradizionale.</p>
+          <a class="link" href="formaggi.html#ricotta">Tutte le ricotte <span aria-hidden="true">→</span></a>
           <ul class="elenco">
-            <li data-foto="p-ricordo"><b>Ricordo<sup>®</sup></b><span>Ricotta pecorina stagionata</span><em>Stagionata</em></li>
-            <li data-foto="p-ricordo-peperoncino"><b>Ricordo<sup>®</sup> al peperoncino</b><span>Ricotta pecorina stagionata</span><em>Stagionata</em></li>
-            <li><b>Selvaggia<sup>®</sup></b><span>Ricotta caprina stagionata</span><em>Stagionata</em></li>
+            <li data-foto="p-ricordo"><b>Ricordo<sup>®</sup></b><span>Ricotta pecorina stagionata</span><em>30–40 giorni</em></li>
+            <li data-foto="p-ricordo-peperoncino"><b>Ricordo<sup>®</sup> al peperoncino</b><span>Ricotta pecorina stagionata</span><em>30–40 giorni</em></li>
+            <li data-foto="p-selvaggia"><b>Selvaggia<sup>®</sup></b><span>Ricotta caprina stagionata</span><em>Stagionata</em></li>
           </ul>
-          <a class="link" href="#">Tutte le ricotte <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
@@ -569,16 +584,16 @@ p { margin: 0; }
           <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
         <div class="categoria__info">
           <h3>Specialità</h3>
-          <p>In Sardegna il mondo dei formaggi è un vero universo. Aggiorniamo la gamma con novità legate alla tradizione casearia sarda: creme spalmabili, grattugiati, formaggi freschi aromatizzati.</p>
+          <p>In Sardegna il mondo dei formaggi è un vero e proprio universo. Fin dall’era nuragica le popolazioni locali trasformavano il fresco latte in tanti modi e varianti. La famiglia Aresu aggiorna costantemente la gamma con delizie innovative legate alla tradizione casearia sarda: creme spalmabili, grattugiati e formaggi freschi aromatizzati.</p>
+          <a class="link" href="formaggi.html#specialita">Tutte le specialità <span aria-hidden="true">→</span></a>
           <ul class="elenco">
-            <li><b>Rustico Aresu<sup>®</sup></b><span>Crema di pecorino</span><em>Crema</em></li>
-            <li><b>Stuzzicante<sup>®</sup></b><span>Crema di formaggio</span><em>Crema</em></li>
-            <li><b>Mix grattugiato<sup>®</sup></b><span>Grattugiato misto</span><em>Grattugiato</em></li>
-            <li><b>Erborinau<sup>®</sup></b><span>Formaggio erborinato</span><em>Erborinato</em></li>
-            <li><b>Pepe nero</b><span>Pecorino al pepe nero</span><em>Aromatizzato</em></li>
+            <li data-foto="p-rustico"><b>Rustico Aresu<sup>®</sup></b><span>Crema di pecorino</span><em>Crema</em></li>
+            <li data-foto="p-stuzzicante"><b>Stuzzicante<sup>®</sup></b><span>Crema di formaggio</span><em>Crema</em></li>
+            <li data-foto="p-mix-grattugiato"><b>Mix grattugiato<sup>®</sup></b><span>Grattugiato misto</span><em>Grattugiato</em></li>
+            <li><b>Erborinau<sup>®</sup></b><span>Formaggio erborinato</span><em>Crosta lavata</em></li>
+            <li data-foto="p-pepe-nero"><b>Pepe nero</b><span>Pecorino al pepe nero</span><em>Pepe nero</em></li>
             <li><b>Rotolino Aresu<sup>®</sup></b><span>Formaggio molle</span><em>Molle</em></li>
           </ul>
-          <a class="link" href="#">Tutte le specialità <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
@@ -588,25 +603,24 @@ p { margin: 0; }
   <section class="gesti scura" id="gesti">
     <div class="wrap gesti__fermo" id="gesti-fermo">
       <div>
-        <div class="gesti__testa"><div class="occhiello">Come nasce una forma</div><h2>Quattro gesti</h2></div>
+        <div class="gesti__testa"><div class="occhiello">Tecnologie alimentari</div><h2>Può sembrare una moderna industria alimentare.</h2></div>
         <div class="gesti__passi">
-          <div class="passo"><span class="num">01 / 04</span><h3>Il latte</h3><p>Raccolto ogni mattina dai pascoli intorno al caseificio.</p></div>
-          <div class="passo"><span class="num">02 / 04</span><h3>La cagliata</h3><p>Rotta a mano, messa in fascera e pressata senza fretta.</p></div>
-          <div class="passo"><span class="num">03 / 04</span><h3>La salamoia</h3><p>Sale marino e acqua: il primo passaggio che decide il carattere.</p></div>
-          <div class="passo"><span class="num">04 / 04</span><h3>La cantina</h3><p>Su tavole di legno massello, girate una a una, finché la forma è pronta.</p></div>
+          <div class="passo"><span class="num">01 / 04</span><h3>Caglio in pasta di agnello sardo IGP</h3><p>Come vuole la tradizione, alcune referenze vengono prodotte utilizzando caglio tradizionale, prodotto da animali nati, cresciuti in Sardegna, con la certificazione IGP.</p></div>
+          <div class="passo"><span class="num">02 / 04</span><h3>Sale marino di Sardegna</h3><p>La salatura avviene con sale marino di Sardegna; un prodotto sardo, genuino, ma molto più costoso.</p></div>
+          <div class="passo"><span class="num">03 / 04</span><h3>Una casa di mattoni</h3><p>Anziché utilizzare pannelli isolanti sintetici, i Formaggi Aresu stagionano in celle di muri di mattone, che ne garantiscono una respirazione naturale ed un ricambio d’aria costante, anche se le celle in mattoni sono più costose da mantenere.</p></div>
+          <div class="passo"><span class="num">04 / 04</span><h3>Legna vera</h3><p>La stagionatura avviene su tavole di abete massello stagionato, che permette al formaggio di “respirare” in maniera naturale, anche se le tavole di plastica sono più semplici da mantenere.</p></div>
         </div>
         <div class="gesti__avanzamento" aria-hidden="true"><i></i></div>
       </div>
       <div class="gesti__immagini">
-        <div class="foto bn"><img src="img/storia-1917.jpg" alt="Archivio: la mungitura delle pecore a Donori" loading="lazy"></div>
-        <div class="foto"><img src="img/ricotta-fuoco.jpg" alt="In caseificio, la cagliata messa nelle fascere" loading="lazy"></div>
-        <div class="foto"><img src="img/forme-salamoia.jpg" alt="Forme in salamoia" loading="lazy"></div>
-        <div class="foto"><img src="img/tavole.jpg" alt="Forme sulle tavole di legno massello" loading="lazy"></div>
+        <div class="foto bn"><img src="img/storia-1917.jpg" alt="Foto storica, Donori 1917" loading="lazy"></div>
+        <div class="foto"><img src="img/forme-salamoia.jpg" alt="Forme di formaggio nel sale" loading="lazy"></div>
+        <div class="foto"><img src="img/forme-buio.jpg" alt="Forme in stagionatura nella penombra" loading="lazy"></div>
+        <div class="foto"><img src="img/tavole.jpg" alt="Forme sulle tavole di legno" loading="lazy"></div>
       </div>
     </div>
     <figure class="gesti__citazione" style="margin:0">
-      <blockquote data-entra>Una forma è pronta quando suona giusta. Non c'è un calendario.</blockquote>
-      <cite data-entra>In cantina, a Donori</cite>
+      <blockquote data-entra>500.000 pezzi commercializzati ogni anno. Non è altro che casa nostra.</blockquote>
     </figure>
   </section>
 
@@ -614,19 +628,19 @@ p { margin: 0; }
   <section class="sezione">
     <div class="wrap">
       <div class="cantina__testa">
-        <div class="occhiello" data-entra>Dalla cantina</div>
-        <h2 data-righe><span class="riga"><span>Due formaggi, due gesti</span></span></h2>
+        <div class="occhiello" data-entra>Formaggi Aresu</div>
+        <h2 data-righe><span class="riga"><span>Maestri della tradizione</span></span></h2>
       </div>
       <div class="evidenze">
         <a class="evidenza" href="#" data-entra>
-          <div class="foto" data-rivela><img src="img/mani-giorgio.jpg" alt="Le mani di Giorgio Aresu tagliano una forma di Arrocca" loading="lazy" data-parallasse></div>
-          <div class="evidenza__meta"><b>Arrocca<sup>®</sup></b><span>Stravecchio riserva</span>
-            <p>Le mani di Giorgio Aresu e la sua Arrocca: il pecorino più lungo della cantina, a crosta naturale.</p></div>
+          <div class="foto" data-rivela><img src="img/mani-giorgio.jpg" alt="Le mani di Giorgio Aresu e Arrocca" loading="lazy" data-parallasse></div>
+          <div class="evidenza__meta"><b>Arrocca<sup>®</sup></b><span>Pecorino stravecchio riserva</span>
+            <p>Le mani di Giorgio Aresu e Arrocca. L’eccellenza, selezionata dalla Famiglia Aresu, viene accompagnata ad una maturazione che può arrivare anche ai 3 anni.</p></div>
         </a>
         <a class="evidenza" href="#" data-entra>
           <div class="foto" data-rivela><img src="img/ricotta-cono.jpg" alt="Una ricotta Ricordo al peperoncino tenuta in mano" loading="lazy" data-parallasse></div>
-          <div class="evidenza__meta"><b>Ricordo<sup>®</sup></b><span>Ricotta pecorina stagionata</span>
-            <p>Lavorata esclusivamente a mano con sale marino locale. Un sapore d'altri tempi, anche al peperoncino.</p></div>
+          <div class="evidenza__meta"><b>Ricordo<sup>®</sup> al peperoncino</b><span>Ricotta pecorina stagionata</span>
+            <p>Lavorata esclusivamente a mano con sale marino locale. Disponibile per consumo da tavola e nei piccoli formati da grattugia, con aggiunta di peperoncino biologico. Un sapore d’altri tempi che farà fare un tuffo nel passato ai più nostalgici.</p></div>
         </a>
       </div>
     </div>
@@ -635,21 +649,21 @@ p { margin: 0; }
   <!-- PERSONE: STRISCIA ORIZZONTALE -->
   <section class="persone scura">
     <div class="striscia" id="striscia">
-      <div class="foto larga"><img src="img/famiglia.jpg" alt="Le persone del caseificio Aresu davanti alle tavole di stagionatura" loading="lazy"></div>
-      <div class="foto alta"><img src="img/cantina-mano.jpg" alt="Una mano gira le forme in cantina" loading="lazy"></div>
-      <div class="foto larga"><img src="img/assaggio.jpg" alt="L'assaggio di una forma" loading="lazy"></div>
+      <div class="foto larga"><img src="img/famiglia.jpg" alt="Il gruppo di Formaggi Aresu davanti alle scaffalature di stagionatura" loading="lazy"></div>
+      <div class="foto alta"><img src="img/cantina-mano.jpg" alt="Una mano su una forma in stagionatura" loading="lazy"></div>
+      <div class="foto larga"><img src="img/assaggio.jpg" alt="Un uomo annusa un campione di formaggio davanti al fuoco" loading="lazy"></div>
       <div class="foto alta"><img src="img/forma-mani.jpg" alt="Una forma fresca tra le mani" loading="lazy"></div>
-      <div class="foto larga"><img src="img/banco.jpg" alt="Il taglio al banco dello shop" loading="lazy"></div>
-      <div class="foto alta"><img src="img/sonda.jpg" alt="L'assaggio con la sonda" loading="lazy"></div>
+      <div class="foto larga"><img src="img/banco.jpg" alt="Il taglio di una forma al banco" loading="lazy"></div>
+      <div class="foto alta"><img src="img/sonda.jpg" alt="Una sonda estrae un campione da una forma" loading="lazy"></div>
     </div>
     <div class="wrap persone__corpo">
-      <div><div class="occhiello" data-entra>Persone, lavoro, passione</div><h2 data-righe><span class="riga"><span>Un gruppo di artigiani,</span></span><span class="riga"><span>una grande famiglia.</span></span></h2></div>
+      <div><div class="occhiello" data-entra>Persone, lavoro, passione</div><h2 data-righe><span class="riga"><span>Un gruppo di artigiani veri,</span></span><span class="riga"><span>una grande famiglia.</span></span></h2></div>
       <div>
-        <blockquote data-entra>«Siamo artigiani del formaggio: gli occhi conservano ciò che hanno visto, le mani lavorano ciò che la natura produce.»</blockquote>
+        <blockquote data-entra>«Siamo artigiani del formaggio: gli occhi conservano ciò che hanno visto e le mani lavorano sapientemente ciò che la natura produce.»</blockquote>
         <div class="valori">
-          <div data-entra><h3><span>01</span>Famiglia</h3><p>Tre generazioni nello stesso caseificio, a Donori.</p></div>
-          <div data-entra><h3><span>02</span>Fatto a mano</h3><p>Si gira, si sala, si aspetta.</p></div>
-          <div data-entra><h3><span>03</span>Territorio</h3><p>Il sapore nasce dai pascoli intorno.</p></div>
+          <div data-entra><h3><span>01</span>Il valore delle mani</h3><p>Le mani non dimenticano quello che gli occhi hanno visto. Molte lavorazioni vengono fatte manualmente, perché le mani sono meglio.</p></div>
+          <div data-entra><h3><span>02</span>Maestri</h3><p>La natura produce, le mani la conservano. L’arte casearia sarda dietro ogni pezzo di formaggio.</p></div>
+          <div data-entra><h3><span>03</span>Il tempo insegna</h3><p>Fidati di secoli di tradizione, in Sardegna si produce formaggio fin dall’età del bronzo (1800 a.C.).</p></div>
         </div>
       </div>
     </div>
@@ -661,16 +675,15 @@ p { margin: 0; }
       <div>
         <div class="occhiello" data-entra>Dove trovarci</div>
         <h2 data-righe><span class="riga"><span>A Donori e a Cagliari</span></span></h2>
-        <p style="max-width:40ch" data-entra>Il caseificio e lo spaccio sono a Donori. In città, due shop con cheesebar per assaggiare prima di scegliere.</p>
-        <div class="foto" data-rivela><img src="img/forme-buio.jpg" alt="Forme in stagionatura nella penombra della cantina" loading="lazy" data-parallasse></div>
+        <div class="foto" data-rivela><img src="img/forme-buio.jpg" alt="Forme in stagionatura nella penombra" loading="lazy" data-parallasse></div>
       </div>
       <div class="luoghi">
         <div class="luogo" data-entra><h3>Punto vendita Donori</h3><p>Via Is Arenas 3<br>09040 Donori (SU)<br><a href="tel:+393911112700">+39 391 111 2700</a></p>
-          <p class="orari">Lun–Ven 8:30–13:00 · 15:00–18:00<br>Sab 9:00–12:30</p></div>
-        <div class="luogo" data-entra><h3>Stabilimento</h3><p>Via Is Arenas 5<br>09040 Donori (SU)<br><a href="tel:+39070981177">+39 070 981177</a></p></div>
+          <p class="orari">Lun–Ven 8:00–18:00<br>Sab 8:00–16:00<br>Domenica chiuso</p></div>
+        <div class="luogo" data-entra><h3>Stabilimento produttivo</h3><p>Via Is Arenas 5<br>09040 Donori (SU)<br><a href="tel:+39070981177">+39 070 981177</a></p></div>
         <div class="luogo" data-entra><h3>Shop &amp; Cheesebar Marconi</h3><p>Viale Marconi 200<br>09131 Cagliari<br><a href="tel:+393667870209">+39 366 787 0209</a></p></div>
         <div class="luogo" data-entra><h3>Shop &amp; Cheesebar Elmas</h3><p>Viale Elmas 19<br>09122 Cagliari<br><a href="tel:+393881203069">+39 388 120 3069</a></p></div>
-        <div class="luogo" data-entra style="grid-column:1 / -1"><h3>Scrivici</h3><p><a href="mailto:info@formaggiaresu.com">info@formaggiaresu.com</a> — per ordini, disponibilità e visite in caseificio.</p></div>
+        <div class="luogo" data-entra style="grid-column:1 / -1"><h3>Scrivici</h3><p><a href="mailto:info@formaggiaresu.com">info@formaggiaresu.com</a><br>Ordini: <a href="mailto:web@formaggiaresu.com">web@formaggiaresu.com</a></p></div>
       </div>
     </div>
   </section>
@@ -678,14 +691,9 @@ p { margin: 0; }
   <!-- NEWSLETTER -->
   <section class="sezione newsletter">
     <div class="wrap">
-      <div class="occhiello" data-entra>Newsletter</div>
-      <h2 data-righe><span class="riga"><span>Quando una stagionatura è pronta</span></span></h2>
-      <p data-entra>Due mail all'anno, quando esce una stagionatura nuova.</p>
-      <form data-entra onsubmit="event.preventDefault(); this.querySelector('button').textContent='Grazie';">
-        <label for="email" class="sr">La tua email</label>
-        <input id="email" type="email" placeholder="La tua email" required autocomplete="email">
-        <button type="submit">Invia</button>
-      </form>
+      <div class="occhiello" data-entra>Visite guidate</div>
+      <h2 data-righe><span class="riga"><span>Direttamente in caseificio</span></span></h2>
+      <a class="link" href="mailto:info@formaggiaresu.com" data-entra>info@formaggiaresu.com <span aria-hidden="true">→</span></a>
     </div>
   </section>
 </main>
@@ -693,10 +701,10 @@ p { margin: 0; }
 <footer class="piede">
   <div class="wrap">
     <div class="piede__griglia">
-      <div class="piede__marchio"><img src="img/sigillo-linea-panna.svg" alt="Formaggi Aresu 1938"><p>È buono, è sardo, è Aresu. Formaggi tradizionali sardi dal 1938.</p></div>
-      <div><h4>Formaggi</h4><ul><li><a href="#formaggi">Pecorino</a></li><li><a href="#formaggi">Caprino</a></li><li><a href="#formaggi">Formaggi misti</a></li><li><a href="#formaggi">Ricotta</a></li><li><a href="#formaggi">Specialità</a></li></ul></div>
-      <div><h4>Azienda</h4><ul><li><a href="#storia">Storia</a></li><li><a href="#territorio">Territorio</a></li><li><a href="#gesti">Caseificio</a></li><li><a href="#dove">Contatti</a></li></ul></div>
-      <div><h4>Seguici</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+      <div class="piede__marchio"><img src="img/sigillo-linea-panna.svg" alt="Formaggi Aresu 1938"><p>È buono, è sardo, è Aresu.</p></div>
+      <div><h4>Formaggi</h4><ul><li><a href="formaggi.html#pecorino">Pecorino</a></li><li><a href="formaggi.html#caprino">Caprino</a></li><li><a href="formaggi.html#misti">Formaggi misti</a></li><li><a href="formaggi.html#ricotta">Ricotta</a></li><li><a href="formaggi.html#specialita">Specialità</a></li></ul></div>
+      <div><h4>Azienda</h4><ul><li><a href="azienda.html">Azienda</a></li><li><a href="territorio.html">Territorio</a></li><li><a href="#dove">Contatti</a></li></ul></div>
+      <div><h4>Seguici</h4><ul><li><a href="#">Facebook</a></li><li><a href="#">Twitter</a></li><li><a href="#">YouTube</a></li></ul></div>
     </div>
     <div class="piede__fine"><span>© 2026 Formaggi Aresu Srl Artigiana · Donori (SU) · P.IVA 03639870926</span><span><a href="#">Privacy</a> · <a href="#">Cookie</a></span></div>
   </div>
@@ -749,10 +757,13 @@ p { margin: 0; }
   document.querySelectorAll('.categoria').forEach(cat => {
     const vis = cat.querySelector('.categoria__visivo');
     const fig = vis.querySelector('.categoria__prodotto');
-    cat.querySelectorAll('.elenco li[data-foto]').forEach(li => {
-      const src = `img/${li.dataset.foto}.jpg`;
+    cat.querySelectorAll('.elenco li').forEach(li => {
+      // Senza foto la miniatura mostra il sigillo, così le righe restano allineate.
       const mini = document.createElement('span'); mini.className = 'elenco__miniatura';
-      mini.innerHTML = `<img src="${src}" alt="" loading="lazy">`; li.prepend(mini);
+      mini.innerHTML = li.dataset.foto ? `<img src="img/${li.dataset.foto}.jpg" alt="" loading="lazy">` : '<img class="sigillo" src="img/sigillo-linea-marrone.svg" alt="">';
+      li.prepend(mini);
+      if (!li.dataset.foto) return;
+      const src = `img/${li.dataset.foto}.jpg`;
       const nome = li.querySelector('b').textContent;
       li.addEventListener('mouseenter', () => { fig.querySelector('img').src = src; fig.querySelector('figcaption').textContent = nome; vis.classList.add('mostra-prodotto'); });
       li.addEventListener('mouseleave', () => vis.classList.remove('mostra-prodotto'));
@@ -820,20 +831,22 @@ p { margin: 0; }
       scrollTrigger: { trigger: '.vetrina', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
   });
 
-  // Quattro gesti: la sezione si ferma e i passi si alternano con lo scroll.
-  const passi = gsap.utils.toArray('.passo');
-  const immagini = gsap.utils.toArray('.gesti__immagini .foto');
-  gsap.set(passi.slice(1), { autoAlpha: 0, y: 30 });
-  gsap.set(immagini.slice(1), { clipPath: 'inset(100% 0 0 0)' });
-  const tl = gsap.timeline({ scrollTrigger: { trigger: '#gesti-fermo', start: 'top top', end: () => '+=' + innerHeight * 2.4,
-    pin: true, scrub: .6, anticipatePin: 1, invalidateOnRefresh: true } });
-  tl.to('.gesti__avanzamento i', { scaleX: 1, ease: 'none', duration: 3 }, 0);
-  for (let i = 1; i < passi.length; i++) {
-    const t = i - 1 + .25;
-    tl.to(passi[i - 1], { autoAlpha: 0, y: -30, duration: .35, ease: 'power2.in' }, t)
-      .to(passi[i], { autoAlpha: 1, y: 0, duration: .45, ease: 'power2.out' }, t + .3)
-      .to(immagini[i], { clipPath: 'inset(0% 0 0 0)', duration: .7, ease: 'power2.inOut' }, t)
-      .fromTo(immagini[i].querySelector('img'), { scale: 1.2 }, { scale: 1, duration: .9, ease: 'power2.out' }, t);
+  // Quattro gesti: la sezione si ferma e i passi si alternano con lo scroll (solo da tablet in su).
+  if (innerWidth > 760) {
+    const passi = gsap.utils.toArray('.passo');
+    const immagini = gsap.utils.toArray('.gesti__immagini .foto');
+    gsap.set(passi.slice(1), { autoAlpha: 0, y: 30 });
+    gsap.set(immagini.slice(1), { clipPath: 'inset(100% 0 0 0)' });
+    const tl = gsap.timeline({ scrollTrigger: { trigger: '#gesti-fermo', start: 'top top', end: () => '+=' + innerHeight * 2.4,
+      pin: true, scrub: .6, anticipatePin: 1, invalidateOnRefresh: true } });
+    tl.to('.gesti__avanzamento i', { scaleX: 1, ease: 'none', duration: 3 }, 0);
+    for (let i = 1; i < passi.length; i++) {
+      const t = i - 1 + .25;
+      tl.to(passi[i - 1], { autoAlpha: 0, y: -30, duration: .35, ease: 'power2.in' }, t)
+        .to(passi[i], { autoAlpha: 1, y: 0, duration: .45, ease: 'power2.out' }, t + .3)
+        .to(immagini[i], { clipPath: 'inset(0% 0 0 0)', duration: .7, ease: 'power2.inOut' }, t)
+        .fromTo(immagini[i].querySelector('img'), { scale: 1.2 }, { scale: 1, duration: .9, ease: 'power2.out' }, t);
+    }
   }
 
   // Foto: si scoprono dal basso e l'immagine scorre dentro la cornice.
