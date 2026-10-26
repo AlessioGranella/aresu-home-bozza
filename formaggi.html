@@ -433,26 +433,41 @@ p { margin: 0; }
 /* Pagina Formaggi: una scheda per ogni prodotto. */
 .cat-intro { max-width: 62ch; margin-bottom: clamp(40px, 5vw, 64px); }
 .cat-intro h3 { font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; margin-bottom: 20px; }
-.prodotto { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) minmax(0, .9fr); gap: clamp(24px, 3.5vw, 56px);
-  padding: clamp(28px, 3vw, 44px) 0; border-top: 1px solid var(--linea); align-items: start; }
-.prodotto:last-child { border-bottom: 1px solid var(--linea); }
-.prodotto__foto { aspect-ratio: 4 / 3; background: var(--ar-sabbia); display: grid; place-items: center; overflow: hidden; }
-.prodotto__foto img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; }
-.prodotto__foto .sigillo { width: 34%; height: auto; opacity: .35; mix-blend-mode: normal; object-fit: contain; }
-.prodotto h4 { font: 700 clamp(20px, 1.8vw, 26px)/1.15 var(--titoli); letter-spacing: .1em; text-transform: uppercase; color: var(--ar-arancio); margin: 0; }
-.prodotto h4 sup { font-size: .45em; font-weight: 300; margin-left: 2px; }
-.prodotto__sotto { display: block; margin-top: 8px; font: 300 12px/1.4 var(--titoli); letter-spacing: .16em; text-transform: uppercase; color: var(--ar-marrone); }
-.prodotto__testo p { margin-top: 16px; }
-.prodotto__dati { font-size: 15px; margin: 0; }
-.prodotto__dati dt { font: 700 11px/1.4 var(--titoli); letter-spacing: .2em; text-transform: uppercase; color: var(--fg-muted); }
-.prodotto__dati dd { margin: 6px 0 20px; }
+.prodotto { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: clamp(32px, 6vw, 96px);
+  padding: clamp(40px, 6vw, 88px) 0; border-top: 1px solid var(--linea); align-items: start; }
+.prodotto:last-of-type { border-bottom: 1px solid var(--linea); }
+.prodotto__foto { grid-row: 1 / span 2; aspect-ratio: 5 / 4; background: var(--ar-sabbia); display: grid; place-items: center; overflow: hidden; }
+.prodotto:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
+.prodotto:nth-of-type(even) .prodotto__foto { grid-column: 2; }
+.prodotto:nth-of-type(even) .prodotto__testo, .prodotto:nth-of-type(even) .prodotto__dati { grid-column: 1; }
+.prodotto__foto img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; transition: transform 1.2s var(--ease); }
+.prodotto:hover .prodotto__foto img:not(.sigillo) { transform: scale(1.04); }
+.prodotto__foto .sigillo { width: 30%; height: auto; opacity: .35; mix-blend-mode: normal; object-fit: contain; }
+.prodotto h4 { font: 700 clamp(26px, 2.8vw, 40px)/1.08 var(--titoli); letter-spacing: .08em; text-transform: uppercase; color: var(--ar-arancio); margin: 0; }
+.prodotto h4 sup { font-size: .4em; font-weight: 300; margin-left: 2px; vertical-align: top; }
+.prodotto__sotto { display: block; margin-top: 12px; font: 300 13px/1.4 var(--titoli); letter-spacing: .18em; text-transform: uppercase; color: var(--ar-marrone); }
+.prodotto__testo { align-self: end; }
+.prodotto__testo > p { margin-top: 22px; font-size: 18px; }
+.prodotto__abbinamento { margin-top: 28px; padding: 20px 24px; background: var(--ar-panna); border-left: 2px solid var(--ar-arancio); }
+.prodotto__abbinamento span { font: 700 11px/1.4 var(--titoli); letter-spacing: .22em; text-transform: uppercase; color: var(--ar-arancio); }
+.prodotto__abbinamento p { margin-top: 8px; }
+.prodotto__abbinamento p b { font-weight: 400; color: var(--ar-marrone); margin-right: 6px; }
+.prodotto__dati { font-size: 15px; margin: 32px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 0 32px; }
+.prodotto__dati dt { font: 700 11px/1.4 var(--titoli); letter-spacing: .2em; text-transform: uppercase; color: var(--fg-muted); padding-top: 9px; }
+.prodotto__dati dd { margin: 0 0 16px; }
 .prodotto__dati ul { list-style: none; margin: 0; padding: 0; }
-.prodotto__dati li { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid var(--linea); }
-.prodotto__dati li b { font-weight: 400; color: var(--ar-marrone); white-space: nowrap; }
+.prodotto__dati li { padding: 7px 0; border-bottom: 1px solid var(--linea); }
+.prodotto__dati dd:not(:has(ul)) { padding: 7px 0; border-bottom: 1px solid var(--linea); }
 .nota-prodotti { margin-top: clamp(40px, 5vw, 64px); font-size: 13px; color: var(--fg-muted); max-width: 80ch; }
 .nota-prodotti p + p { margin-top: 8px; }
-@media (max-width: 1080px) { .prodotto { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); } .prodotto__dati { grid-column: 2; } }
-@media (max-width: 760px) { .prodotto { grid-template-columns: 1fr; } .prodotto__dati { grid-column: auto; } }
+@media (max-width: 760px) {
+  .prodotto, .prodotto:nth-of-type(even) { grid-template-columns: 1fr; grid-template-rows: none; padding: 40px 0; }
+  .prodotto__foto, .prodotto:nth-of-type(even) .prodotto__foto { grid-row: auto; grid-column: auto; margin: 0 calc(var(--g) * -1) 24px; aspect-ratio: 4 / 3; }
+  .prodotto:nth-of-type(even) .prodotto__testo, .prodotto:nth-of-type(even) .prodotto__dati { grid-column: auto; }
+  .prodotto__testo > p { font-size: 16px; }
+  .prodotto__foto img:not(.sigillo) { object-fit: contain; }
+  .prodotto__abbinamento span, .prodotto__dati dt { font-size: 12px; }
+}
 </style>
 </head>
 <body>
@@ -513,32 +528,32 @@ p { margin: 0; }
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-ricercata.jpg" alt="Ricercata" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Ricercata<sup>®</sup></h4><span class="prodotto__sotto">Pecorino dolce</span><p>Pecorino dolce a pasta molle, maturazione 20-30 giorni. Crosta liscia e sottile di colore bianco. Pasta bianca, morbida, compatta. Consumo ideale da tavola.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>20–30 giorni</dd><dt>Formati</dt><dd><ul><li><span>1/4 – 500 gr</span><b>4,00 €</b></li><li><span>Forma – 2 kg</span><b>16,00 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>20–30 giorni</dd><dt>Formati</dt><dd><ul><li><span>1/4 – 500 gr</span></li><li><span>Forma – 2 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-originale.jpg" alt="Originale®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Originale<sup>®</sup></h4><span class="prodotto__sotto">Pecorino fresco</span><p>Pecorino fresco, maturazione 20-30 giorni. Disponibile in tre formati differenti per ogni esigenza commerciale. Pasta elastica, ideale da arrosto, per esaltarne le caratteristiche organolettiche.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>20–30 giorni</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 400 gr</span><b>3,50 €</b></li><li><span>Forma dm 10 – 700 gr</span><b>6,00 €</b></li><li><span>Forma dm 16 – 1,2 kg</span><b>10,00 €</b></li><li><span>Forma dm 22 – 3,4 kg</span><b>28,00 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Originale<sup>®</sup></h4><span class="prodotto__sotto">Pecorino fresco</span><p>Pecorino fresco, maturazione 20-30 giorni. Disponibile in tre formati differenti per ogni esigenza commerciale. Pasta elastica, ideale da arrosto, per esaltarne le caratteristiche organolettiche.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Perfetto da arrosto. Il suo gusto, sulla fiamma o in padella è davvero Originale.</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>20–30 giorni</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 400 gr</span></li><li><span>Forma dm 10 – 700 gr</span></li><li><span>Forma dm 16 – 1,2 kg</span></li><li><span>Forma dm 22 – 3,4 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-risveglio.jpg" alt="Risveglio®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Risveglio<sup>®</sup></h4><span class="prodotto__sotto">Pecorino semistagionato</span><p>Pecorino da tavola, a crosta naturale. Stagionatura di 3 mesi garantiti. Pastoso, con un aroma completo. Ideale come antipasto.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>3 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 g</span><b>3,70 €</b></li><li><span>Forma dm 20 – 2,7 kg</span><b>25,00 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Risveglio<sup>®</sup></h4><span class="prodotto__sotto">Pecorino semistagionato</span><p>Pecorino da tavola, a crosta naturale. Stagionatura di 3 mesi garantiti. Pastoso, con un aroma completo. Ideale come antipasto.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Perfetto per antipasto o aperitivo ma la sua versatilità gli permette di essere un formaggio valido a tutto pasto.</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>3 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 g</span></li><li><span>Forma dm 20 – 2,7 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-la-goccia.jpg" alt="La Goccia®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>La Goccia<sup>®</sup></h4><span class="prodotto__sotto">Pecorino stagionato classico</span><p>Pecorino stagionato classico, con una maturazione di minimo 7 mesi, si posiziona tra le migliori marche italiane del segmento. Pasta compatta, gusto deciso ma equilibrato. Si presta alla grattugia.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>Minimo 7 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 g</span><b>3,70 €</b></li><li><span>Forma dm 20 – 2,4 kg</span><b>25,00 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>La Goccia<sup>®</sup></h4><span class="prodotto__sotto">Pecorino stagionato classico</span><p>Pecorino stagionato classico, con una maturazione di minimo 7 mesi, si posiziona tra le migliori marche italiane del segmento. Pasta compatta, gusto deciso ma equilibrato. Si presta alla grattugia.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Formaggio da tutto pasto, ottimo per la pizza, perfetto a fine pasto.</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>Minimo 7 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 g</span></li><li><span>Forma dm 20 – 2,4 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-nobile.jpg" alt="Nobile" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Nobile<sup>®</sup></h4><span class="prodotto__sotto">Pecorino stagionato superiore</span><p>Lavorazione tradizionale sarda per un pecorino stagionato superiore, prodotto con il caglio in pasta di agnello sardo. Stagionatura 7 mesi. Pasta compatta, friabile. Gusto superiore, con accenni di piccante.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>7 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/4 – 600 g</span><b>6,80 €</b></li><li><span>Forma – 2,4 kg</span><b>27,00 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Nobile<sup>®</sup></h4><span class="prodotto__sotto">Pecorino stagionato superiore</span><p>Lavorazione tradizionale sarda per un pecorino stagionato superiore, prodotto con il caglio in pasta di agnello sardo. Stagionatura 7 mesi. Pasta compatta, friabile. Gusto superiore, con accenni di piccante.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Palati e nasi esigenti. Perfetto in abbinamento con un sott’olio tipico sardo (carciofo sardo spinoso IGP).</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>7 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/4 – 600 g</span></li><li><span>Forma – 2,4 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-arrocca.jpg" alt="Arrocca" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Arrocca<sup>®</sup></h4><span class="prodotto__sotto">Pecorino stravecchio riserva</span><p>L’eccellenza, selezionata solo dalla famiglia Aresu viene accompagnata ad una maturazione che può arrivare anche ai 3 anni. In questo lungo periodo, il pecorino Arrocca® si migliora, portando il gusto al confine della perfezione.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>Fino a 3 anni</dd><dt>Formati</dt><dd><ul><li><span>1/4 – 700 gr</span><b>10,00 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>Fino a 3 anni</dd><dt>Formati</dt><dd><ul><li><span>1/4 – 700 gr</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img class="sigillo" src="img/sigillo-linea-marrone.svg" alt=""></div>
@@ -548,25 +563,25 @@ p { margin: 0; }
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-romano-dop.jpg" alt="Pecorino Romano DOP" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Pecorino Romano DOP</h4><span class="prodotto__sotto">Pecorino semistagionato</span><p>Come vuole la tradizione italiana, disciplinato dalla DOP, questo prodotto si distingue per le ottime performance da grattugia. Disponibile in diversi formati per ogni esigenza commerciale.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/48 – 350 gr</span><b>4,00 €</b></li><li><span>1/8 – 3 kg</span><b>28,00 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/48 – 350 gr</span></li><li><span>1/8 – 3 kg</span></li></ul></dd></dl>
           </article>
       </div>
       <div role="tabpanel" id="c-caprino" aria-labelledby="t-caprino" hidden>
         <div class="cat-intro"><h3>Caprino</h3><p>Un prodotto in cui crediamo da più di 50 anni, ancor prima che le caratteristiche nutrizionali dei formaggi caprini fossero conosciute e valorizzate. Conosciamo le montagne da cui proviene la materia prima, ne valorizziamo le caratteristiche nutrizionali, creando un formaggio di qualità superiore.</p></div>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-ideale.jpg" alt="Ideale®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Ideale<sup>®</sup></h4><span class="prodotto__sotto">Caprino fresco</span><p>Caprino fresco, con 30 giorni di maturazione. Pasta bianca ed elastica, dal gusto delicato e leggero. Ottimo in cucina.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>30 giorni</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span><b>3,50 €</b></li><li><span>Forma dm 10 – 700 gr</span><b>7,00 €</b></li><li><span>Forma dm 16 – 1,0 kg</span><b>10,00 €</b></li><li><span>Forma dm 20 – 2,8 kg</span><b>28,00 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Ideale<sup>®</sup></h4><span class="prodotto__sotto">Caprino fresco</span><p>Caprino fresco, con 30 giorni di maturazione. Pasta bianca ed elastica, dal gusto delicato e leggero. Ottimo in cucina.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Fine pasto con confetture di frutta o miele.</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>30 giorni</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span></li><li><span>Forma dm 10 – 700 gr</span></li><li><span>Forma dm 16 – 1,0 kg</span></li><li><span>Forma dm 20 – 2,8 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-aresti.jpg" alt="Aresti®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Aresti<sup>®</sup></h4><span class="prodotto__sotto">Caprino semistagionato</span><p>Caprino da tavola. Stagionatura di 3 mesi. Crosta naturale, consistenza friabile, gusto equilibrato e ricco di note aromatiche.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>3 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 300 gr</span><b>3,70 €</b></li><li><span>Forma dm 20 – 2,6 kg</span><b>27,50 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Aresti<sup>®</sup></h4><span class="prodotto__sotto">Caprino semistagionato</span><p>Caprino da tavola. Stagionatura di 3 mesi. Crosta naturale, consistenza friabile, gusto equilibrato e ricco di note aromatiche.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Ottimo come antipasto in abbinamento ad un sott’olio.</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>3 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 300 gr</span></li><li><span>Forma dm 20 – 2,6 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-selvaggio.jpg" alt="Selvaggio®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Selvaggio<sup>®</sup></h4><span class="prodotto__sotto">Caprino stagionato</span><p>Caprino stagionato classico. Matura per almeno 7 mesi nei nostri locali, sviluppando un aroma unico, completo e stabile.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>Almeno 7 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 250 g</span><b>3,70 €</b></li><li><span>Forma dm 20 – 2,4 kg</span><b>26,50 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Selvaggio<sup>®</sup></h4><span class="prodotto__sotto">Caprino stagionato</span><p>Caprino stagionato classico. Matura per almeno 7 mesi nei nostri locali, sviluppando un aroma unico, completo e stabile.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Perfetto per un aperitivo, grazie alla sua consistenza avvolgente.</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>Almeno 7 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 250 g</span></li><li><span>Forma dm 20 – 2,4 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img class="sigillo" src="img/sigillo-linea-marrone.svg" alt=""></div>
@@ -578,8 +593,8 @@ p { margin: 0; }
         <div class="cat-intro"><h3>Formaggi misti</h3><p>Le note dolci del latte fresco di mucca locale si uniscono al sapore del latte di pecora. I prodotti stagionano su assi di legno massello, che imprimono una firma indelebile su ogni forma. In questa categoria, spicca il Granaresu, top di gamma, ormai un riferimento nel mercato nazionale ed internazionale.</p></div>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-trifoglio.jpg" alt="Trifoglio®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Trifoglio<sup>®</sup></h4><span class="prodotto__sotto">Formaggio misto vaccino – ovino</span><p>Formaggio molle, stagionatura 20-30 gg. Pasta elastica ed adesiva. Gusto dolce. Disponibile in diversi formati, ideale in cucina ed arrosto.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>20–30 giorni</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span><b>3,00 €</b></li><li><span>Forma intera – 3,4 kg</span><b>25,00 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Trifoglio<sup>®</sup></h4><span class="prodotto__sotto">Formaggio misto vaccino – ovino</span><p>Formaggio molle, stagionatura 20-30 gg. Pasta elastica ed adesiva. Gusto dolce. Disponibile in diversi formati, ideale in cucina ed arrosto.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Ottimo per la preparazione di primi piatti al forno. Perfetto per il ripieno delle Sebadas (dolce fritto tipico sardo).</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>20–30 giorni</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span></li><li><span>Forma intera – 3,4 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img class="sigillo" src="img/sigillo-linea-marrone.svg" alt=""></div>
@@ -588,12 +603,12 @@ p { margin: 0; }
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-montesu.jpg" alt="Montesu®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Montesu<sup>®</sup></h4><span class="prodotto__sotto">Formaggio da tavola misto vaccino – ovino</span><p>Formaggio da tavola stagionato tre mesi. Pasta grassa, adesiva, che abbina il dolce del latte di mucca, al gusto unico del latte di pecora.</p></div>
-            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>3 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span><b>3,00 €</b></li><li><span>Forma intera – 3,4 kg</span><b>25,00 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Montesu<sup>®</sup></h4><span class="prodotto__sotto">Formaggio da tavola misto vaccino – ovino</span><p>Formaggio da tavola stagionato tre mesi. Pasta grassa, adesiva, che abbina il dolce del latte di mucca, al gusto unico del latte di pecora.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>È un formaggio a tutto pasto, valido alleato per i primi piatti da forno.</p></div></div>
+            <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>3 mesi</dd><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span></li><li><span>Forma intera – 3,4 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-granaresu.jpg" alt="Granaresu®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Granaresu<sup>®</sup></h4><span class="prodotto__sotto">Formaggio misto superiore a lunga maturazione</span><p>Superiore a lunga maturazione, stagionato almeno 12 mesi. Dolce al palato con un sapore deciso e persistente. Ricorda aromi di latte fresco e fieno appena tagliato. Pasta granulosa, friabile, compatta. Valido per ogni momento del pasto o come contorno.</p></div>
+            <div class="prodotto__testo"><h4>Granaresu<sup>®</sup></h4><span class="prodotto__sotto">Formaggio misto superiore a lunga maturazione</span><p>Superiore a lunga maturazione, stagionato almeno 12 mesi. Dolce al palato con un sapore deciso e persistente. Ricorda aromi di latte fresco e fieno appena tagliato. Pasta granulosa, friabile, compatta. Valido per ogni momento del pasto o come contorno.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p>Gli amanti del vero formaggio, che non si fermano alle esperienze passate. Un formaggio a tutto pasto, così completo da definirsi esso stesso il pasto.</p></div></div>
             <dl class="prodotto__dati"><dt>Stagionatura</dt><dd>Almeno 12 mesi</dd><dt>Formati</dt><dd><ul><li><span>Forma – 6 kg</span></li></ul></dd></dl>
           </article>
       </div>
@@ -601,13 +616,13 @@ p { margin: 0; }
         <div class="cat-intro"><h3>Ricotta</h3><p>La ricotta fatta alla vecchia maniera: fuoco e sale marino di Sardegna. Nessun additivo, né panna o grassi, solo sapienza e mani esperte. Garantiamo a tutta l’ampia gamma, dalle fresche alle stagionate, un valore ed un gusto inconfondibile e tradizionale.</p></div>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-ricordo.jpg" alt="Ricordo®" loading="lazy"></div>
-            <div class="prodotto__testo"><h4>Ricordo<sup>®</sup></h4><span class="prodotto__sotto">Ricotta pecorina stagionata</span><p>Ricotta pecorina stagionata, lavorata esclusivamente a mano con sale marino locale. Disponibile per consumo da tavola, e nei piccoli formati da grattugia e al peperoncino biologico.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>Cono – 400 gr</span><b>2,90 €</b></li><li><span>Cono peperoncino biologico – 400 gr</span><b>2,90 €</b></li><li><span>1/2 – 0,9 kg</span><b>6,00 €</b></li><li><span>Forma classica – 1,8 kg</span><b>12,00 €</b></li></ul></dd></dl>
+            <div class="prodotto__testo"><h4>Ricordo<sup>®</sup></h4><span class="prodotto__sotto">Ricotta pecorina stagionata</span><p>Ricotta pecorina stagionata, lavorata esclusivamente a mano con sale marino locale. Disponibile per consumo da tavola, e nei piccoli formati da grattugia e al peperoncino biologico.</p><div class="prodotto__abbinamento"><span>Abbinamento</span><p><b>Classica</b> Da provare sulle minestre e le insalate o da solo, accompagnato con aceto balsamico.</p><p><b>Al peperoncino</b> Ottima sopra i primi piatti per chi gradisce una nota piccante ma non invadente.</p></div></div>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>Cono – 400 gr</span></li><li><span>Cono peperoncino biologico – 400 gr</span></li><li><span>1/2 – 0,9 kg</span></li><li><span>Forma classica – 1,8 kg</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-selvaggia.jpg" alt="Selvaggia" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Selvaggia<sup>®</sup></h4><span class="prodotto__sotto">Ricotta caprina stagionata</span><p>Ricotta caprina stagionata. Sempre più apprezzata per la sua leggerezza, abbina un gusto delicato alla duttilità di utilizzo.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/2 – 0,9 kg</span><b>6,50 €</b></li><li><span>Forma – 1,8 kg</span><b>13,00 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/2 – 0,9 kg</span></li><li><span>Forma – 1,8 kg</span></li></ul></dd></dl>
           </article>
       </div>
       <div role="tabpanel" id="c-specialita" aria-labelledby="t-specialita" hidden>
@@ -615,17 +630,17 @@ p { margin: 0; }
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-rustico.jpg" alt="Rustico Aresu" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Rustico Aresu<sup>®</sup></h4><span class="prodotto__sotto">Crema di pecorino</span><p>Crema di pecorino, dalla consistenza rugosa, nel formato unico e caratteristico. Gusto molto intenso dovuto alla selezione di solo formaggi stagionati che non vengono rielaborati così da tenere intatto il gusto deciso dei formaggi maturi.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>Forma classica – 450 gr</span><b>5,00 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>Forma classica – 450 gr</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-stuzzicante.jpg" alt="Stuzzicante" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Stuzzicante<sup>®</sup></h4><span class="prodotto__sotto">Crema di formaggi</span><p>Crema di formaggi, disponibile in tante varianti, anche personalizzate, per le moderne esigenze della ristorazione. Pratico e gusto stuzzicante.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>Classico – 200 gr</span><b>2,20 €</b></li><li><span>Piccante – 200 gr</span><b>2,20 €</b></li><li><span>Peperoncino – 200 gr</span><b>2,20 €</b></li><li><span>Caprino – 200 gr</span><b>2,50 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>Classico – 200 gr</span></li><li><span>Piccante – 200 gr</span></li><li><span>Peperoncino – 200 gr</span></li><li><span>Caprino – 200 gr</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-mix-grattugiato.jpg" alt="Mix grattugiato" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Mix grattugiato<sup>®</sup></h4><span class="prodotto__sotto">Mix di formaggi &amp; ricotte Aresu</span><p>Il mix di formaggi e ricotte rende questo mix di grattugiati ideale per ogni preparazione o condimento.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>Bustina – 100 gr</span><b>1,00 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>Bustina – 100 gr</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img class="sigillo" src="img/sigillo-linea-marrone.svg" alt=""></div>
@@ -635,17 +650,17 @@ p { margin: 0; }
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-pepe-nero.jpg" alt="Pepe nero" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Pepe nero</h4><span class="prodotto__sotto">Formaggio speziato al pepe nero</span><p>Pecorino e pepe nero: storico abbinamento che lega la Sardegna alle regioni meridionali dell’Italia. È qui che questo connubio viene maggiormente apprezzato.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span><b>3,70 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-erba-cipollina.jpg" alt="Erba cipollina" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Erba cipollina</h4><span class="prodotto__sotto">Formaggio speziato all’erba cipollina</span><p>Provalo arrosto, quando il dolce del formaggio si abbina al gusto sobrio dell’erba cipollina.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span><b>3,70 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img src="img/p-peperoncino-bio.jpg" alt="Peperoncino bio" loading="lazy"></div>
             <div class="prodotto__testo"><h4>Peperoncino bio</h4><span class="prodotto__sotto">Formaggio speziato al peperoncino BIO</span><p>Formaggio speziato al peperoncino biologico. Prodotto in Sardegna.</p></div>
-            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span><b>3,70 €</b></li></ul></dd></dl>
+            <dl class="prodotto__dati"><dt>Formati</dt><dd><ul><li><span>1/8 – 350 gr</span></li></ul></dd></dl>
           </article>
           <article class="prodotto" data-entra>
             <div class="prodotto__foto"><img class="sigillo" src="img/sigillo-linea-marrone.svg" alt=""></div>
