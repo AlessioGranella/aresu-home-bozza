@@ -363,7 +363,7 @@ p { margin: 0; }
   .gesti__testa h2 { font-size: 32px; margin-top: 12px; }
   .gesti__passi { margin-top: 20px; min-height: 0; }
   .gesti__immagini .foto + .foto { display: none; }
-  .gesti__fermo { min-height: 0; padding-bottom: 0; }
+  .gesti__fermo { min-height: 0; padding-bottom: 72px; }
   .passo h3 { margin-top: 8px; }
 
   .evidenze { grid-template-columns: 1fr; gap: 56px; }
@@ -418,7 +418,7 @@ p { margin: 0; }
           <div class="occhiello" data-entra>Donori · Sardegna · dal 1938</div>
           <h1 data-righe><span class="riga"><span>È buono,</span></span><span class="riga"><span>è sardo,</span></span><span class="riga"><span><em>è Aresu.</em></span></span></h1>
           <p data-entra>La Formaggi Aresu produce formaggi tradizionali sardi dal 1938.</p>
-          <a class="link" href="#formaggi" data-entra>Scopri i formaggi <span aria-hidden="true">→</span></a>
+          <a class="link" href="formaggi.html" data-entra>Scopri i formaggi <span aria-hidden="true">→</span></a>
         </div>
         <div class="hero__schede" data-entra>
           <a class="hero__scheda" href="formaggi.html"><img src="img/cat-pecorino.jpg" alt=""><span><b>I nostri formaggi</b><span>Una vasta gamma di prodotti</span></span></a>
@@ -492,110 +492,7 @@ p { margin: 0; }
       <div class="occhiello" data-entra>Il catalogo</div>
       <h2 id="vetrina-titolo" data-righe><span class="riga"><span>Una vasta gamma</span></span><span class="riga"><span><em>di prodotti.</em></span></span></h2>
       <p data-entra>Vengono prodotte circa 40 diverse referenze, dai pecorini DOP, ai formaggi caprini; ricotte fresche e stagionate, e tante altre specialità casearie sarde.</p>
-      <a class="link" href="#formaggi" data-entra>Scegli il tuo formaggio <span aria-hidden="true">↓</span></a>
-    </div>
-  </section>
-
-  <!-- FORMAGGI: CATEGORIE -->
-  <section class="sezione" id="formaggi">
-    <div class="wrap">
-      <div class="formaggi__testa">
-        <div><div class="occhiello" data-entra>Prodotti tradizionali sardi</div><h2 data-righe><span class="riga"><span>I nostri formaggi</span></span></h2></div>
-      </div>
-
-      <div class="schede" role="tablist" aria-label="Categorie di formaggi">
-        <button role="tab" id="t-pecorino" aria-controls="c-pecorino" aria-selected="true">Pecorino<sup>9</sup></button>
-        <button role="tab" id="t-caprino" aria-controls="c-caprino" aria-selected="false" tabindex="-1">Caprino<sup>4</sup></button>
-        <button role="tab" id="t-misti" aria-controls="c-misti" aria-selected="false" tabindex="-1">Formaggi misti<sup>4</sup></button>
-        <button role="tab" id="t-ricotta" aria-controls="c-ricotta" aria-selected="false" tabindex="-1">Ricotta<sup>3</sup></button>
-        <button role="tab" id="t-specialita" aria-controls="c-specialita" aria-selected="false" tabindex="-1">Specialità<sup>6</sup></button>
-      </div>
-
-      <div class="categoria" role="tabpanel" id="c-pecorino" aria-labelledby="t-pecorino">
-        <div class="categoria__visivo"><div class="foto categoria__foto"><img src="img/cat-pecorino.jpg" alt="Pecorini Aresu, freschi e stagionati, su telo di lino">
-          <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
-        <div class="categoria__info">
-          <h3>Pecorino</h3>
-          <p>Dai freschissimi agli stagionati, il nostro assortimento di pecorini copre tutte le esigenze commerciali, garantendo alto valore aggiunto in ogni fascia. I nostri classici stagionati non subiscono trattamenti con conservanti in crosta. La stagionatura a crosta naturale, fatta come da tradizione, alla vecchia maniera, è una nostra grande peculiarità.</p>
-          <a class="link" href="formaggi.html#pecorino">Tutti i pecorini <span aria-hidden="true">→</span></a>
-          <ul class="elenco">
-            <li><b>Pecorino primo sale</b><span>Pecorino tradizionale italiano</span><em>Senza stagionatura</em></li>
-            <li data-foto="p-ricercata"><b>Ricercata<sup>®</sup></b><span>Pecorino dolce</span><em>20–30 giorni</em></li>
-            <li data-foto="p-originale"><b>Originale<sup>®</sup></b><span>Pecorino fresco</span><em>20–30 giorni</em></li>
-            <li data-foto="p-risveglio"><b>Risveglio<sup>®</sup></b><span>Pecorino semistagionato</span><em>3 mesi</em></li>
-            <li data-foto="p-la-goccia"><b>La Goccia<sup>®</sup></b><span>Pecorino stagionato</span><em>7 mesi</em></li>
-            <li data-foto="p-nobile"><b>Nobile<sup>®</sup></b><span>Pecorino stagionato superiore</span><em>7 mesi</em></li>
-            <li data-foto="p-arrocca"><b>Arrocca<sup>®</sup></b><span>Pecorino stravecchio riserva</span><em>Fino a 3 anni</em></li>
-            <li><b>Brunu</b><span>Pecorino</span><em>30–40 giorni</em></li>
-            <li data-foto="p-romano-dop"><b>Pecorino Romano DOP</b><span>Il pecorino italiano più venduto nel mondo</span><em>DOP</em></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="categoria" role="tabpanel" id="c-caprino" aria-labelledby="t-caprino" hidden>
-        <div class="categoria__visivo"><div class="foto categoria__foto"><img src="img/cat-caprino.jpg" alt="Caprini Aresu su telo di lino" style="object-position:40% 50%" loading="lazy">
-          <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
-        <div class="categoria__info">
-          <h3>Caprino</h3>
-          <p>Un prodotto in cui crediamo da più di 50 anni, ancor prima che le caratteristiche nutrizionali dei formaggi caprini fossero conosciute e valorizzate. Conosciamo le montagne da cui proviene la materia prima, ne valorizziamo le caratteristiche nutrizionali, creando un formaggio di qualità superiore.</p>
-          <a class="link" href="formaggi.html#caprino">Tutti i caprini <span aria-hidden="true">→</span></a>
-          <ul class="elenco">
-            <li data-foto="p-ideale"><b>Ideale<sup>®</sup></b><span>Caprino fresco</span><em>30 giorni</em></li>
-            <li data-foto="p-aresti"><b>Aresti<sup>®</sup></b><span>Caprino semistagionato</span><em>3 mesi</em></li>
-            <li data-foto="p-selvaggio"><b>Selvaggio<sup>®</sup></b><span>Caprino stagionato</span><em>7 mesi</em></li>
-            <li><b>Grancapresu<sup>®</sup></b><span>Caprino stagionato superiore</span><em>12 mesi</em></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="categoria" role="tabpanel" id="c-misti" aria-labelledby="t-misti" hidden>
-        <div class="categoria__visivo"><div class="foto categoria__foto"><img src="img/cat-misti.jpg" alt="Formaggi misti Aresu su telo di lino" style="object-position:55% 50%" loading="lazy">
-          <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
-        <div class="categoria__info">
-          <h3>Formaggi misti</h3>
-          <p>Le note dolci del latte fresco di mucca locale si uniscono al sapore del latte di pecora. I prodotti stagionano su assi di legno massello, che imprimono una firma indelebile su ogni forma. In questa categoria, spicca il Granaresu, top di gamma, ormai un riferimento nel mercato nazionale ed internazionale.</p>
-          <a class="link" href="formaggi.html#misti">Tutti i formaggi misti <span aria-hidden="true">→</span></a>
-          <ul class="elenco">
-            <li data-foto="p-trifoglio"><b>Trifoglio<sup>®</sup></b><span>Formaggio misto fresco</span><em>20–30 giorni</em></li>
-            <li><b>Formaggio primo sale</b><span>Primo sale misto</span><em>Senza stagionatura</em></li>
-            <li data-foto="p-montesu"><b>Montesu<sup>®</sup></b><span>Formaggio misto da tavola</span><em>3 mesi</em></li>
-            <li data-foto="p-granaresu"><b>Granaresu<sup>®</sup></b><span>Formaggio misto superiore a lunga maturazione</span><em>12 mesi</em></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="categoria" role="tabpanel" id="c-ricotta" aria-labelledby="t-ricotta" hidden>
-        <div class="categoria__visivo"><div class="foto categoria__foto"><img src="img/cat-ricotta.jpg" alt="Ricotte Aresu su telo di lino" loading="lazy">
-          <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
-        <div class="categoria__info">
-          <h3>Ricotta</h3>
-          <p>La ricotta fatta alla vecchia maniera: fuoco e sale marino di Sardegna. Nessun additivo, né panna o grassi, solo sapienza e mani esperte. Garantiamo a tutta l’ampia gamma, dalle fresche alle stagionate, un valore ed un gusto inconfondibile e tradizionale.</p>
-          <a class="link" href="formaggi.html#ricotta">Tutte le ricotte <span aria-hidden="true">→</span></a>
-          <ul class="elenco">
-            <li data-foto="p-ricordo"><b>Ricordo<sup>®</sup></b><span>Ricotta pecorina stagionata</span><em>30–40 giorni</em></li>
-            <li data-foto="p-ricordo-peperoncino"><b>Ricordo<sup>®</sup> al peperoncino</b><span>Ricotta pecorina stagionata</span><em>30–40 giorni</em></li>
-            <li data-foto="p-selvaggia"><b>Selvaggia<sup>®</sup></b><span>Ricotta caprina stagionata</span><em>Stagionata</em></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="categoria" role="tabpanel" id="c-specialita" aria-labelledby="t-specialita" hidden>
-        <div class="categoria__visivo"><div class="foto categoria__foto"><img src="img/cat-specialita.jpg" alt="Specialità Aresu: creme, grattugiato, formaggi aromatizzati" loading="lazy">
-          <figure class="categoria__prodotto" aria-hidden="true"><img alt=""><figcaption></figcaption></figure></div></div>
-        <div class="categoria__info">
-          <h3>Specialità</h3>
-          <p>In Sardegna il mondo dei formaggi è un vero e proprio universo. Fin dall’era nuragica le popolazioni locali trasformavano il fresco latte in tanti modi e varianti. La famiglia Aresu aggiorna costantemente la gamma con delizie innovative legate alla tradizione casearia sarda: creme spalmabili, grattugiati e formaggi freschi aromatizzati.</p>
-          <a class="link" href="formaggi.html#specialita">Tutte le specialità <span aria-hidden="true">→</span></a>
-          <ul class="elenco">
-            <li data-foto="p-rustico"><b>Rustico Aresu<sup>®</sup></b><span>Crema di pecorino</span><em>Crema</em></li>
-            <li data-foto="p-stuzzicante"><b>Stuzzicante<sup>®</sup></b><span>Crema di formaggio</span><em>Crema</em></li>
-            <li data-foto="p-mix-grattugiato"><b>Mix grattugiato<sup>®</sup></b><span>Grattugiato misto</span><em>Grattugiato</em></li>
-            <li><b>Erborinau<sup>®</sup></b><span>Formaggio erborinato</span><em>Crosta lavata</em></li>
-            <li data-foto="p-pepe-nero"><b>Pepe nero</b><span>Pecorino al pepe nero</span><em>Pepe nero</em></li>
-            <li><b>Rotolino Aresu<sup>®</sup></b><span>Formaggio molle</span><em>Molle</em></li>
-          </ul>
-        </div>
-      </div>
+      <a class="link" href="formaggi.html" data-entra>Scegli il tuo formaggio <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -619,9 +516,6 @@ p { margin: 0; }
         <div class="foto"><img src="img/tavole.jpg" alt="Forme sulle tavole di legno" loading="lazy"></div>
       </div>
     </div>
-    <figure class="gesti__citazione" style="margin:0">
-      <blockquote data-entra>500.000 pezzi commercializzati ogni anno. Non è altro che casa nostra.</blockquote>
-    </figure>
   </section>
 
   <!-- DALLA CANTINA -->
@@ -683,7 +577,7 @@ p { margin: 0; }
         <div class="luogo" data-entra><h3>Stabilimento produttivo</h3><p>Via Is Arenas 5<br>09040 Donori (SU)<br><a href="tel:+39070981177">+39 070 981177</a></p></div>
         <div class="luogo" data-entra><h3>Shop &amp; Cheesebar Marconi</h3><p>Viale Marconi 200<br>09131 Cagliari<br><a href="tel:+393667870209">+39 366 787 0209</a></p></div>
         <div class="luogo" data-entra><h3>Shop &amp; Cheesebar Elmas</h3><p>Viale Elmas 19<br>09122 Cagliari<br><a href="tel:+393881203069">+39 388 120 3069</a></p></div>
-        <div class="luogo" data-entra style="grid-column:1 / -1"><h3>Scrivici</h3><p><a href="mailto:info@formaggiaresu.com">info@formaggiaresu.com</a><br>Ordini: <a href="mailto:web@formaggiaresu.com">web@formaggiaresu.com</a></p></div>
+        <div class="luogo" data-entra style="grid-column:1 / -1"><h3>Scrivici</h3><p><a href="mailto:info@formaggiaresu.com">info@formaggiaresu.com</a></p></div>
       </div>
     </div>
   </section>
@@ -704,7 +598,7 @@ p { margin: 0; }
       <div class="piede__marchio"><img src="img/sigillo-linea-panna.svg" alt="Formaggi Aresu 1938"><p>È buono, è sardo, è Aresu.</p></div>
       <div><h4>Formaggi</h4><ul><li><a href="formaggi.html#pecorino">Pecorino</a></li><li><a href="formaggi.html#caprino">Caprino</a></li><li><a href="formaggi.html#misti">Formaggi misti</a></li><li><a href="formaggi.html#ricotta">Ricotta</a></li><li><a href="formaggi.html#specialita">Specialità</a></li></ul></div>
       <div><h4>Azienda</h4><ul><li><a href="azienda.html">Azienda</a></li><li><a href="territorio.html">Territorio</a></li><li><a href="#dove">Contatti</a></li></ul></div>
-      <div><h4>Seguici</h4><ul><li><a href="#">Facebook</a></li><li><a href="#">Twitter</a></li><li><a href="#">YouTube</a></li></ul></div>
+      <div><h4>Seguici</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">YouTube</a></li></ul></div>
     </div>
     <div class="piede__fine"><span>© 2026 Formaggi Aresu Srl Artigiana · Donori (SU) · P.IVA 03639870926</span><span><a href="#">Privacy</a> · <a href="#">Cookie</a></span></div>
   </div>
@@ -730,45 +624,6 @@ p { margin: 0; }
   const chiudi = () => { document.body.classList.remove('menu-aperto'); btn.setAttribute('aria-expanded', 'false'); };
   btn.addEventListener('click', () => btn.setAttribute('aria-expanded', String(document.body.classList.toggle('menu-aperto'))));
   document.querySelectorAll('.menu-mobile a').forEach(a => a.addEventListener('click', chiudi));
-
-  // Schede delle categorie, con frecce da tastiera.
-  const tabs = [...document.querySelectorAll('[role="tab"]')];
-  const attiva = t => {
-    tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1;
-      document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
-    const pannello = document.getElementById(t.getAttribute('aria-controls'));
-    if (window.gsap && !riduci) {
-      gsap.fromTo(pannello.querySelector('.categoria__foto'), { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 1, ease: 'expo.out' });
-      gsap.fromTo(pannello.querySelector('.categoria__foto > img'), { scale: 1.15 }, { scale: 1, duration: 1.4, ease: 'expo.out' });
-      gsap.fromTo(pannello.querySelectorAll('.categoria__info > *, .elenco li'), { y: 24, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: .8, stagger: .035, ease: 'power3.out' });
-    }
-    window.ScrollTrigger && ScrollTrigger.refresh();
-  };
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => attiva(t));
-    t.addEventListener('keydown', e => {
-      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (d) { e.preventDefault(); const n = tabs[(i + d + tabs.length) % tabs.length]; attiva(n); n.focus(); }
-    });
-  });
-
-  // Prodotti: su desktop il passaggio sulla riga mostra lo scatto al posto dello still life;
-  // su mobile ogni riga ha la sua miniatura.
-  document.querySelectorAll('.categoria').forEach(cat => {
-    const vis = cat.querySelector('.categoria__visivo');
-    const fig = vis.querySelector('.categoria__prodotto');
-    cat.querySelectorAll('.elenco li').forEach(li => {
-      // Senza foto la miniatura mostra il sigillo, così le righe restano allineate.
-      const mini = document.createElement('span'); mini.className = 'elenco__miniatura';
-      mini.innerHTML = li.dataset.foto ? `<img src="img/${li.dataset.foto}.jpg" alt="" loading="lazy">` : '<img class="sigillo" src="img/sigillo-linea-marrone.svg" alt="">';
-      li.prepend(mini);
-      if (!li.dataset.foto) return;
-      const src = `img/${li.dataset.foto}.jpg`;
-      const nome = li.querySelector('b').textContent;
-      li.addEventListener('mouseenter', () => { fig.querySelector('img').src = src; fig.querySelector('figcaption').textContent = nome; vis.classList.add('mostra-prodotto'); });
-      li.addEventListener('mouseleave', () => vis.classList.remove('mostra-prodotto'));
-    });
-  });
 
   /* ---------- animazioni: solo con GSAP e senza «riduci movimento» ---------- */
   const riduci = matchMedia('(prefers-reduced-motion: reduce)').matches;
