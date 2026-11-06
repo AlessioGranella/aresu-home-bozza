@@ -381,6 +381,13 @@ p { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
 
+.offerta { display: flex; flex-wrap: wrap; gap: 10px 12px; margin-top: 28px; padding: 0; list-style: none; }
+.offerta li { font: 700 11px/1 var(--titoli); letter-spacing: .2em; text-transform: uppercase; color: var(--ar-marrone); border: 1px solid var(--linea); padding: 12px 16px; }
+.galleria { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.4vw, 20px); margin-top: clamp(48px, 6vw, 88px); }
+.galleria .foto { aspect-ratio: 4 / 3; }
+.galleria .foto--grande { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.galleria img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 760px) { .galleria { grid-template-columns: 1fr 1fr; } .galleria .foto--grande { grid-row: auto; aspect-ratio: 4 / 3; } }
 /* Cheese bar */
 .locali { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 4vw, 64px); margin-top: clamp(48px, 6vw, 88px); }
 .locale { border-top: 1px solid var(--linea); padding-top: 28px; }
@@ -470,7 +477,7 @@ p { margin: 0; }
 
 <main id="top">
   <section class="hero hero--pagina">
-    <div class="hero__media"><img src="img/banco.jpg" alt="Taglio di una forma al banco"></div>
+    <div class="hero__media"><img src="img/cheesebar/banco-bar.jpg" alt="Il bancone del cheese bar Aresu, con le forme sulle mensole"></div>
     <div class="hero__contenuto">
       <div class="wrap">
         <div class="hero__testo">
@@ -487,14 +494,23 @@ p { margin: 0; }
       <div class="pagina-testa">
         <div class="occhiello" data-entra>Dove siamo</div>
         <h2 data-righe><span class="riga"><span>I nostri cheese bar</span></span></h2>
+        <ul class="offerta" data-entra><li>Vendita diretta</li><li>Formaggi</li><li>Caffetteria</li><li>Pausa pranzo</li><li>Aperitivo</li><li>Wine</li><li>Birretta</li><li>Cocktail</li></ul>
         <div class="da-fornire" data-entra><b>Da fornire</b>Testo di presentazione dei cheese bar: che cosa sono, che esperienza offrono, da quando sono aperti.</div>
+      </div>
+      <div class="galleria">
+        <div class="foto foto--grande" data-rivela><img src="img/cheesebar/sala.jpg" alt="La sala del cheese bar, con il banco dei formaggi e i tavoli alti" loading="lazy"></div>
+        <div class="foto" data-rivela><img src="img/cheesebar/tagliere-birre.jpg" alt="Tagliere di formaggi Aresu con quattro birre" loading="lazy"></div>
+        <div class="foto" data-rivela><img src="img/cheesebar/granaresu-banco.jpg" alt="Forme di Granaresu sul banco" loading="lazy"></div>
+        <div class="foto" data-rivela><img src="img/cheesebar/esterno.jpg" alt="L'esterno del punto vendita con l'insegna Formaggi Aresu" loading="lazy"></div>
+        <div class="foto" data-rivela><img src="img/cheesebar/vetrina.jpg" alt="La vetrina con le forme illuminate" loading="lazy"></div>
+        <div class="foto" data-rivela><img src="img/cheesebar/dehors.jpg" alt="Il dehors con tavoli e sgabelli" loading="lazy"></div>
       </div>
       <div class="locali">
         <article class="locale" data-entra>
           <span class="num">01</span>
           <h3>Shop &amp; Cheesebar Marconi</h3>
           <p>Viale Marconi 200<br>09131 Cagliari<br><a href="tel:+393667870209">+39 366 787 0209</a></p>
-          <div class="da-fornire"><b>Da fornire</b>Orari di apertura, cosa si trova (degustazioni, taglieri, vendita al banco) e una foto del locale.</div>
+          <div class="da-fornire"><b>Da fornire</b>Orari di apertura.</div>
           <div class="mappa"><iframe src="https://maps.google.com/maps?q=Viale%20Marconi%20200%2C%2009131%20Cagliari&amp;z=16&amp;output=embed" title="Mappa: Shop &amp; Cheesebar Marconi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
           <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Viale+Marconi+200,+09131+Cagliari" target="_blank" rel="noopener">Indicazioni stradali <span aria-hidden="true">→</span></a>
         </article>
@@ -502,7 +518,7 @@ p { margin: 0; }
           <span class="num">02</span>
           <h3>Shop &amp; Cheesebar Elmas</h3>
           <p>Viale Elmas 19<br>09122 Cagliari<br><a href="tel:+393881203069">+39 388 120 3069</a></p>
-          <div class="da-fornire"><b>Da fornire</b>Orari di apertura, cosa si trova (degustazioni, taglieri, vendita al banco) e una foto del locale.</div>
+          <div class="da-fornire"><b>Da fornire</b>Orari di apertura.</div>
           <div class="mappa"><iframe src="https://maps.google.com/maps?q=Viale%20Elmas%2019%2C%2009122%20Cagliari&amp;z=16&amp;output=embed" title="Mappa: Shop &amp; Cheesebar Elmas" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
           <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Viale+Elmas+19,+09122+Cagliari" target="_blank" rel="noopener">Indicazioni stradali <span aria-hidden="true">→</span></a>
         </article>
