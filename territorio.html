@@ -313,7 +313,10 @@ p { margin: 0; }
   .testata .wrap { grid-template-columns: 44px 1fr 44px; height: 100px; }
   .testata.scrollata .wrap { height: 80px; }
   .testata .marchio { justify-self: center; } .testata .marchio img { width: 84px; height: 84px; } .testata.scrollata .marchio img { width: 64px; height: 64px; }
-  .testata .destra { grid-column: 3; }
+  .testata .destra { display: none; }
+  /* hamburger a destra, marchio al centro */
+  .testata .apri-menu { grid-column: 3; grid-row: 1; justify-self: end; margin: 0 -10px 0 0; }
+  .testata .marchio { grid-column: 2; grid-row: 1; }
   .menu-mobile { position: fixed; inset: 80px 0 0; z-index: 29; background: var(--bg); padding: 40px var(--g);
     display: flex; flex-direction: column; gap: 4px; opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s; }
   .menu-aperto .menu-mobile { opacity: 1; visibility: visible; }
