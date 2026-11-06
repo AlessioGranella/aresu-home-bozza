@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Cheese bar — Formaggi Aresu</title>
-<meta name="description" content="Shop &amp; Cheesebar Formaggi Aresu a Cagliari: viale Marconi 200 e viale Elmas 19.">
+<meta name="description" content="I punti vendita Formaggi Aresu: Donori, e gli Shop &amp; Cheesebar di Cagliari in viale Marconi 200 e viale Elmas 19.">
 <link rel="icon" href="img/sigillo-pieno-arancio.svg">
 <style>
 /* Bozza home — Formaggi Aresu. Token dal design system (../../design-system), prefisso --ar-*.
@@ -389,11 +389,13 @@ p { margin: 0; }
 .galleria img { width: 100%; height: 100%; object-fit: cover; display: block; }
 @media (max-width: 760px) { .galleria { grid-template-columns: 1fr 1fr; } .galleria .foto--grande { grid-row: auto; aspect-ratio: 4 / 3; } }
 /* Cheese bar */
-.locali { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 4vw, 64px); margin-top: clamp(48px, 6vw, 88px); }
+.locali { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(32px, 4vw, 64px); margin-top: clamp(48px, 6vw, 88px); }
 .locale { border-top: 1px solid var(--linea); padding-top: 28px; }
 .locale .num { font: 300 13px/1 var(--titoli); letter-spacing: .2em; color: var(--ar-arancio); }
 .locale h3 { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.1; margin: 14px 0 18px; }
 .locale p { font-size: 17px; line-height: 1.7; }
+.locale .descrizione { color: var(--fg-muted); font-size: 16px; margin-bottom: 18px; }
+.locale .orari { color: var(--fg-muted); font-size: 15px; margin-top: 14px; }
 .locale a { text-decoration: none; border-bottom: 1px solid var(--linea); }
 .locale a:hover { color: var(--ar-arancio); border-color: currentColor; }
 .locale .link { border: 0; margin-top: 20px; }
@@ -401,6 +403,7 @@ p { margin: 0; }
 .mappa iframe { width: 100%; height: 100%; border: 0; display: block; filter: sepia(.25) saturate(.8); }
 .da-fornire { margin-top: 18px; padding: 14px 16px; border: 1px dashed var(--ar-arancio); font-size: 14px; line-height: 1.5; color: var(--fg-muted); }
 .da-fornire b { font: 700 11px/1.4 var(--titoli); letter-spacing: .2em; text-transform: uppercase; color: var(--ar-arancio); display: block; margin-bottom: 4px; }
+@media (max-width: 1080px) { .locali { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 760px) { .locali { grid-template-columns: 1fr; } }
 </style>
 <style>
@@ -483,7 +486,7 @@ p { margin: 0; }
         <div class="hero__testo">
           <div class="occhiello" data-entra>Shop &amp; Cheesebar</div>
           <h1 data-righe><span class="riga"><span>Aresu</span></span><span class="riga"><span><em>a Cagliari.</em></span></span></h1>
-          <p data-entra>Due punti vendita diretti in città, in viale Marconi e in viale Elmas.</p>
+          <p data-entra>Tre punti vendita diretti: in caseificio a Donori e due cheese bar a Cagliari, in viale Marconi e in viale Elmas.</p>
         </div>
       </div>
     </div>
@@ -493,9 +496,9 @@ p { margin: 0; }
     <div class="wrap">
       <div class="pagina-testa">
         <div class="occhiello" data-entra>Dove siamo</div>
-        <h2 data-righe><span class="riga"><span>I nostri cheese bar</span></span></h2>
+        <h2 data-righe><span class="riga"><span>Tre posti dove trovarci</span></span></h2>
+        <p data-entra>In ogni punto vendita trovi tutti i formaggi Aresu, dal fresco allo stagionato, tagliati al momento. A Cagliari i cheese bar sono anche un posto dove fermarsi: un caffè la mattina, un pranzo veloce, un tagliere con un calice di vino o una birra la sera.</p>
         <ul class="offerta" data-entra><li>Vendita diretta</li><li>Formaggi</li><li>Caffetteria</li><li>Pausa pranzo</li><li>Aperitivo</li><li>Wine</li><li>Birretta</li><li>Cocktail</li></ul>
-        <div class="da-fornire" data-entra><b>Da fornire</b>Testo di presentazione dei cheese bar: che cosa sono, che esperienza offrono, da quando sono aperti.</div>
       </div>
       <div class="galleria">
         <div class="foto foto--grande" data-rivela><img src="img/cheesebar/sala.jpg" alt="La sala del cheese bar, con il banco dei formaggi e i tavoli alti" loading="lazy"></div>
@@ -508,19 +511,30 @@ p { margin: 0; }
       <div class="locali">
         <article class="locale" data-entra>
           <span class="num">01</span>
-          <h3>Shop &amp; Cheesebar Marconi</h3>
-          <p>Viale Marconi 200<br>09131 Cagliari<br><a href="tel:+393667870209">+39 366 787 0209</a></p>
-          <div class="da-fornire"><b>Da fornire</b>Orari di apertura.</div>
-          <div class="mappa"><iframe src="https://maps.google.com/maps?q=Viale%20Marconi%20200%2C%2009131%20Cagliari&amp;z=16&amp;output=embed" title="Mappa: Shop &amp; Cheesebar Marconi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-          <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Viale+Marconi+200,+09131+Cagliari" target="_blank" rel="noopener">Indicazioni stradali <span aria-hidden="true">→</span></a>
+          <h3>Punto vendita Donori</h3>
+          <p class="descrizione">Accanto al caseificio, dove nascono i nostri formaggi. Qui trovi l’intera gamma, le forme intere e la ricotta fresca del giorno.</p>
+          <p>Via Is Arenas 3<br>09040 Donori (SU)<br><a href="tel:+393911112700">+39 391 111 2700</a></p>
+          <p class="orari">Lun–Ven 8:00–18:00<br>Sab 8:00–16:00<br>Domenica chiuso</p>
+          <div class="mappa"><iframe src="https://maps.google.com/maps?q=Via%20Is%20Arenas%203%2C%2009040%20Donori&amp;z=16&amp;output=embed" title="Mappa: Punto vendita Donori" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Is%20Arenas%203%2C%2009040%20Donori" target="_blank" rel="noopener">Indicazioni stradali <span aria-hidden="true">→</span></a>
         </article>
         <article class="locale" data-entra>
           <span class="num">02</span>
+          <h3>Shop &amp; Cheesebar Marconi</h3>
+          <p class="descrizione">Il primo cheese bar in città. Banco formaggi e caffetteria, pausa pranzo con piatti semplici e taglieri con vino e birra fino a sera.</p>
+          <p>Viale Marconi 200<br>09131 Cagliari<br><a href="tel:+393667870209">+39 366 787 0209</a></p>
+          <p class="orari">Lun–Sab 8:00–21:00<br>Domenica chiuso</p>
+          <div class="mappa"><iframe src="https://maps.google.com/maps?q=Viale%20Marconi%20200%2C%2009131%20Cagliari&amp;z=16&amp;output=embed" title="Mappa: Shop &amp; Cheesebar Marconi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Viale%20Marconi%20200%2C%2009131%20Cagliari" target="_blank" rel="noopener">Indicazioni stradali <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="locale" data-entra>
+          <span class="num">03</span>
           <h3>Shop &amp; Cheesebar Elmas</h3>
+          <p class="descrizione">Aperto a novembre 2024. Vendita diretta dei formaggi Aresu, colazioni, pranzi e aperitivi con i nostri taglieri.</p>
           <p>Viale Elmas 19<br>09122 Cagliari<br><a href="tel:+393881203069">+39 388 120 3069</a></p>
-          <div class="da-fornire"><b>Da fornire</b>Orari di apertura.</div>
+          <p class="orari">Lun–Sab 7:30–20:30<br>Dom 9:00–13:00</p>
           <div class="mappa"><iframe src="https://maps.google.com/maps?q=Viale%20Elmas%2019%2C%2009122%20Cagliari&amp;z=16&amp;output=embed" title="Mappa: Shop &amp; Cheesebar Elmas" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-          <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Viale+Elmas+19,+09122+Cagliari" target="_blank" rel="noopener">Indicazioni stradali <span aria-hidden="true">→</span></a>
+          <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Viale%20Elmas%2019%2C%2009122%20Cagliari" target="_blank" rel="noopener">Indicazioni stradali <span aria-hidden="true">→</span></a>
         </article>
       </div>
     </div>
@@ -529,13 +543,11 @@ p { margin: 0; }
   <section class="sezione dove">
     <div class="wrap dove__griglia">
       <div>
-        <div class="occhiello" data-entra>Anche in caseificio</div>
-        <h2 data-righe><span class="riga"><span>Il punto vendita di Donori</span></span></h2>
+        <div class="occhiello" data-entra>Visite guidate</div>
+        <h2 data-righe><span class="riga"><span>Direttamente in caseificio</span></span></h2>
       </div>
       <div class="luoghi">
-        <div class="luogo" data-entra><h3>Punto vendita Donori</h3><p>Via Is Arenas 3<br>09040 Donori (SU)<br><a href="tel:+393911112700">+39 391 111 2700</a></p>
-          <p class="orari">Lun–Ven 8:00–18:00<br>Sab 8:00–16:00<br>Domenica chiuso</p></div>
-        <div class="luogo" data-entra><h3>Visite guidate</h3><p>Direttamente in caseificio<br><a href="mailto:info@formaggiaresu.com">info@formaggiaresu.com</a></p></div>
+        <div class="luogo" data-entra style="grid-column:1 / -1"><h3>Prenota una visita</h3><p>Vieni a vedere come nascono i formaggi Aresu, dalla lavorazione del latte alle celle di stagionatura. Le visite si prenotano per email.</p><p><a href="mailto:info@formaggiaresu.com">info@formaggiaresu.com</a></p></div>
       </div>
     </div>
   </section>
