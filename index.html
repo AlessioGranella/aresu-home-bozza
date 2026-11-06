@@ -286,6 +286,9 @@ p { margin: 0; }
 .luogo .orari { color: var(--fg-muted); margin-top: 8px; }
 .luogo a { text-decoration: none; border-bottom: 1px solid var(--linea); }
 .luogo a:hover { color: var(--ar-arancio); border-color: currentColor; }
+.luogo .link { border: 0; }
+.testata nav a[aria-current] { opacity: 1; color: var(--ar-arancio); }
+.testata.su-video:not(.scrollata) nav a[aria-current] { color: var(--ar-sabbia); }
 
 /* ---------------------------------------------------------- NEWSLETTER + PIEDE */
 .newsletter { text-align: center; }
@@ -392,19 +395,20 @@ p { margin: 0; }
   <div class="wrap">
     <button class="apri-menu" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu-mobile"><span></span><span></span></button>
     <nav aria-label="Principale">
+      <a href="#top" aria-current="page">Home</a>
       <a href="azienda.html">Azienda</a>
       <a href="formaggi.html">Formaggi</a>
       <a href="territorio.html">Territorio</a>
     </nav>
     <a class="marchio" href="#top" aria-label="Formaggi Aresu, torna all'inizio"><img class="scuro" src="img/sigillo-linea-marrone.svg" alt="Formaggi Aresu 1938" width="116" height="116"><img class="chiaro" src="img/sigillo-linea-panna.svg" alt="" width="116" height="116"></a>
     <div class="destra">
-      <nav aria-label="Servizio"><a href="#dove">Contatti</a></nav>
+      <nav aria-label="Servizio"><a href="cheesebar.html">Cheese bar</a><a href="#dove">Contatti</a></nav>
       <div class="lingue"><a href="#" aria-current="true">IT</a><a href="#">EN</a><a href="#">DE</a></div>
     </div>
   </div>
 </header>
 <div class="menu-mobile" id="menu-mobile">
-  <a href="azienda.html">Azienda</a><a href="formaggi.html">Formaggi</a><a href="territorio.html">Territorio</a><a href="#dove">Contatti</a>
+  <a href="#top" aria-current="page">Home</a><a href="azienda.html">Azienda</a><a href="formaggi.html">Formaggi</a><a href="territorio.html">Territorio</a><a href="cheesebar.html">Cheese bar</a><a href="#dove">Contatti</a>
   <div class="lingue-m"><a href="#" aria-current="true">IT</a><a href="#">EN</a><a href="#">DE</a></div>
 </div>
 
@@ -577,6 +581,7 @@ p { margin: 0; }
         <div class="luogo" data-entra><h3>Stabilimento produttivo</h3><p>Via Is Arenas 5<br>09040 Donori (SU)<br><a href="tel:+39070981177">+39 070 981177</a></p></div>
         <div class="luogo" data-entra><h3>Shop &amp; Cheesebar Marconi</h3><p>Viale Marconi 200<br>09131 Cagliari<br><a href="tel:+393667870209">+39 366 787 0209</a></p></div>
         <div class="luogo" data-entra><h3>Shop &amp; Cheesebar Elmas</h3><p>Viale Elmas 19<br>09122 Cagliari<br><a href="tel:+393881203069">+39 388 120 3069</a></p></div>
+        <div class="luogo" data-entra style="grid-column:1 / -1"><a class="link" href="cheesebar.html">Scopri i cheese bar di Cagliari <span aria-hidden="true">→</span></a></div>
         <div class="luogo" data-entra style="grid-column:1 / -1"><h3>Scrivici</h3><p><a href="mailto:info@formaggiaresu.com">info@formaggiaresu.com</a></p></div>
       </div>
     </div>
@@ -597,7 +602,7 @@ p { margin: 0; }
     <div class="piede__griglia">
       <div class="piede__marchio"><img src="img/sigillo-linea-panna.svg" alt="Formaggi Aresu 1938"><p>È buono, è sardo, è Aresu.</p></div>
       <div><h4>Formaggi</h4><ul><li><a href="formaggi.html#pecorino">Pecorino</a></li><li><a href="formaggi.html#caprino">Caprino</a></li><li><a href="formaggi.html#misti">Formaggi misti</a></li><li><a href="formaggi.html#ricotta">Ricotta</a></li><li><a href="formaggi.html#specialita">Specialità</a></li></ul></div>
-      <div><h4>Azienda</h4><ul><li><a href="azienda.html">Azienda</a></li><li><a href="territorio.html">Territorio</a></li><li><a href="#dove">Contatti</a></li></ul></div>
+      <div><h4>Azienda</h4><ul><li><a href="azienda.html">Azienda</a></li><li><a href="territorio.html">Territorio</a></li><li><a href="cheesebar.html">Cheese bar</a></li><li><a href="#dove">Contatti</a></li></ul></div>
       <div><h4>Seguici</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">YouTube</a></li></ul></div>
     </div>
     <div class="piede__fine"><span>© 2026 Formaggi Aresu Srl Artigiana · Donori (SU) · P.IVA 03639870926</span><span><a href="#">Privacy</a> · <a href="#">Cookie</a></span></div>
