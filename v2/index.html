@@ -390,6 +390,23 @@ p { margin: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+/* v2: gallerie con le foto dello shooting del 19/11/2026 */
+.lavorazione { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: clamp(64px, 8vw, 120px); }
+.lavorazione .foto { aspect-ratio: 3 / 2; }
+.lavorazione .foto.ampia { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.terna { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: clamp(48px, 6vw, 88px); }
+.terna .foto { aspect-ratio: 2 / 3; }
+.still { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.still .foto { aspect-ratio: 1 / 1; background: #d6d4da; }
+.foto-intera { aspect-ratio: auto !important; }
+.foto-intera img { height: auto; }
+@media (max-width: 760px) {
+  .lavorazione { grid-template-columns: 1fr 1fr; }
+  .lavorazione .foto.ampia { grid-row: auto; aspect-ratio: 3 / 2; }
+  .terna { grid-template-columns: 1fr 1fr; } .terna .foto:last-child { display: none; }
+  .still { grid-template-columns: 1fr 1fr; }
+}
 </style>
 </head>
 <body>
@@ -479,6 +496,13 @@ p { margin: 0; }
       </div>
     </div>
     <p class="mani wrap" data-entra>«Tutti possono mettere il caglio nel latte. Quello che fa la differenza sono le mani.»</p>
+    <div class="wrap lavorazione">
+      <div class="foto ampia" data-rivela><img src="../img/shooting/cagliata-mani.jpg" alt="Le mani rompono la cagliata nella vasca" loading="lazy"></div>
+      <div class="foto" data-rivela><img src="../img/shooting/lira-caldaia.jpg" alt="La lira gira nel latte della caldaia" loading="lazy"></div>
+      <div class="foto" data-rivela><img src="../img/shooting/fagotto-secchio.jpg" alt="Il siero scola dal telo in un secchio" loading="lazy"></div>
+      <div class="foto" data-rivela><img src="../img/shooting/fuscelle.jpg" alt="La pasta pressata a mano nelle fuscelle" loading="lazy"></div>
+      <div class="foto" data-rivela><img src="../img/shooting/forma-fuscella.jpg" alt="Una forma tolta dalla fuscella" loading="lazy"></div>
+    </div>
   </section>
 
   <!-- VETRINA: I FORMAGGI CHE FLUTTUANO -->
@@ -550,7 +574,7 @@ p { margin: 0; }
   <!-- PERSONE: STRISCIA ORIZZONTALE -->
   <section class="persone scura">
     <div class="striscia" id="striscia">
-      <div class="foto larga"><img src="../img/shooting/famiglia-cantina.jpg" alt="La famiglia Aresu tra le scaffalature di stagionatura" loading="lazy"></div>
+      <div class="foto larga" style="aspect-ratio:3/2"><img src="../img/shooting/famiglia-cantina.jpg" alt="La famiglia Aresu tra le scaffalature di stagionatura" loading="lazy"></div>
       <div class="foto alta"><img src="../img/shooting/fagotto.jpg" alt="Una mano strizza il telo con la pasta e lascia scolare il siero" loading="lazy"></div>
       <div class="foto larga"><img src="../img/shooting/due-casari.jpg" alt="Due casari al lavoro nel caseificio" loading="lazy"></div>
       <div class="foto alta"><img src="../img/shooting/forma-fresca.jpg" alt="Una forma fresca appena tolta dalla fuscella" loading="lazy"></div>
@@ -576,7 +600,7 @@ p { margin: 0; }
       <div>
         <div class="occhiello" data-entra>Dove trovarci</div>
         <h2 data-righe><span class="riga"><span>A Donori e a Cagliari</span></span></h2>
-        <div class="foto" data-rivela><img src="../img/forme-buio.jpg" alt="Forme in stagionatura nella penombra" loading="lazy" data-parallasse></div>
+        <div class="foto" data-rivela><img src="../img/shooting/ricotte-penombra.jpg" alt="Ricotte a sgocciolare nella penombra del caseificio" loading="lazy" data-parallasse></div>
       </div>
       <div class="luoghi">
         <div class="luogo" data-entra><h3>Punto vendita Donori</h3><p>Via Is Arenas 3<br>09040 Donori (SU)<br><a href="tel:+393911112700">+39 391 111 2700</a></p>

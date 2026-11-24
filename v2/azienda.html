@@ -383,6 +383,23 @@ p { margin: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+/* v2: gallerie con le foto dello shooting del 19/11/2026 */
+.lavorazione { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: clamp(64px, 8vw, 120px); }
+.lavorazione .foto { aspect-ratio: 3 / 2; }
+.lavorazione .foto.ampia { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.terna { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: clamp(48px, 6vw, 88px); }
+.terna .foto { aspect-ratio: 2 / 3; }
+.still { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.still .foto { aspect-ratio: 1 / 1; background: #d6d4da; }
+.foto-intera { aspect-ratio: auto !important; }
+.foto-intera img { height: auto; }
+@media (max-width: 760px) {
+  .lavorazione { grid-template-columns: 1fr 1fr; }
+  .lavorazione .foto.ampia { grid-row: auto; aspect-ratio: 3 / 2; }
+  .terna { grid-template-columns: 1fr 1fr; } .terna .foto:last-child { display: none; }
+  .still { grid-template-columns: 1fr 1fr; }
+}
 </style>
 <style>
 /* Pagine interne: hero con foto al posto del video, blocchi foto+testo, schede. */
@@ -499,7 +516,7 @@ p { margin: 0; }
 
   <section class="sezione scura">
     <div class="wrap">
-      <div class="foto larga-foto" data-rivela><img src="../img/shooting/squadra-cantina.jpg" alt="Il gruppo di Formaggi Aresu davanti alle scaffalature di stagionatura" loading="lazy"></div>
+      <div class="foto larga-foto foto-intera" data-rivela><img src="../img/shooting/squadra-cantina.jpg" alt="Il gruppo di Formaggi Aresu davanti alle scaffalature di stagionatura" loading="lazy"></div>
       <div class="pagina-testa" style="margin-top:clamp(48px,6vw,88px)">
         <div class="occhiello" data-entra>Persone</div>
         <h2 data-righe><span class="riga"><span>Persone, lavoro, passione.</span></span></h2>
@@ -509,6 +526,11 @@ p { margin: 0; }
         <div data-entra><h3><span>01</span>Il valore delle mani</h3><p>Le mani non dimenticano quello che gli occhi hanno visto. Molte lavorazioni vengono fatte manualmente, perché le mani sono meglio.</p></div>
         <div data-entra><h3><span>02</span>Maestri</h3><p>La natura produce, le mani la conservano. L’arte casearia sarda dietro ogni pezzo di formaggio.</p></div>
         <div data-entra><h3><span>03</span>Il tempo insegna</h3><p>Fidati di secoli di tradizione, in Sardegna si produce formaggio fin dall’età del bronzo (1800 a.C.)</p><p style="margin-top:12px"><a href="https://it.wikipedia.org/wiki/Civilt%C3%A0_nuragica" target="_blank" rel="noopener">La Civiltà Nuragica</a></p></div>
+      </div>
+      <div class="terna">
+        <div class="foto" data-rivela><img src="../img/shooting/forma-tavolo.jpg" alt="Una forma appena fatta sopra le fuscelle" loading="lazy"></div>
+        <div class="foto" data-rivela><img src="../img/shooting/forma-siero.jpg" alt="Le mani rovesciano la fuscella e il siero cola" loading="lazy"></div>
+        <div class="foto" data-rivela><img src="../img/shooting/ricotta-schiumarola.jpg" alt="La ricotta raccolta con la schiumarola" loading="lazy"></div>
       </div>
     </div>
   </section>
